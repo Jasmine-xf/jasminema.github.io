@@ -1,59 +1,37 @@
 <!-- ===== 全局页脚组件 ===== -->
-<!-- 这个组件会被所有页面共享，修改这里会影响整个网站的页脚 -->
 <footer class="footer bg-light py-5 mt-5">
     <div class="container">
-        <div class="row">
-            <!-- ===== 左侧品牌信息区域 ===== -->
-            <!-- 品牌Logo、名称和简介描述 -->
-            <div class="col-lg-4 mb-4">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="avatar me-3"></div>
-                    <span class="fw-bold">Portfolio</span>
-                </div>
-                <p class="text-muted mb-0">
-                    A modern portfolio template built with Bootstrap 5. 
-                    Showcase your work, skills, and experience in style.
-                </p>
-            </div>
-            <!-- ===== 中间快速链接区域 ===== -->
-            <!-- 网站主要页面的快速导航链接 -->
-            <div class="col-lg-4 mb-4">
-                <h6 class="fw-bold mb-3">Quick Links</h6>
-                <div class="d-flex gap-4 flex-wrap justify-content-center justify-content-lg-start">
-                    <a href="index.html" class="text-muted text-decoration-none">Works</a>
-                    <a href="about.html" class="text-muted text-decoration-none">About</a>
-                    <a href="resume.html" class="text-muted text-decoration-none">Resume</a>
-                    <a href="#" class="text-muted text-decoration-none">Experiments</a>
-                </div>
-            </div>
-            <!-- ===== 右侧社交媒体连接区域 ===== -->
-            <!-- 各种社交媒体平台的图标链接 -->
-            <div class="col-lg-4 mb-4">
-                <h6 class="fw-bold mb-3">Connect</h6>
-                <div class="d-flex gap-3">
-                    <a href="#" class="text-muted text-decoration-none">
-                        <i class="bi bi-twitter fs-5"></i>
-                    </a>
-                    <a href="#" class="text-muted text-decoration-none">
-                        <i class="bi bi-linkedin fs-5"></i>
-                    </a>
-                    <a href="#" class="text-muted text-decoration-none">
-                        <i class="bi bi-github fs-5"></i>
-                    </a>
-                    <a href="#" class="text-muted text-decoration-none">
-                        <i class="bi bi-envelope fs-5"></i>
-                    </a>
-                </div>
+        <!-- 第一行：视频居中独占一行 -->
+        <div class="row justify-content-center">
+            <div class="col-auto d-flex justify-content-center">
+                <video src="assets/images/logovideo.mp4" width="200" height="120" autoplay loop muted playsinline style="border-radius:50%;"></video>
             </div>
         </div>
-        <!-- ===== 分隔线 ===== -->
+        <!-- 第二行：Let's Connect 居中 -->
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto d-flex justify-content-center">
+                <div class="fw-bold fs-3"><h2 class="mb-0">Let's Connect</h2></div>
+            </div>
+        </div>
+        <!-- 第三行：社交 icon 居中且加大 -->
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto d-flex justify-content-center">
+                <a class="nav-link d-inline text-muted ms-3" href="mailto:jasminemacn@gmail.com" aria-label="Email Jasmine" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-envelope-fill" aria-hidden="true" style="font-size:30px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/xuefei-ma-66aa26178/" class="text-muted text-decoration-none ms-3" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-linkedin" style="font-size:30px;"></i>
+                </a>
+                <a href="https://github.com/Jasmine-xf" class="text-muted text-decoration-none ms-3" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github" style="font-size:30px;"></i>
+                </a>
+            </div>
+        </div>
         <hr class="my-4">
-        
-        <!-- ===== 版权信息区域 ===== -->
-        <!-- 页面底部的版权声明和构建信息 -->
+        <!-- 版权信息 -->
         <div class="text-center">
             <p class="text-muted mb-0">
-                © 2024 Portfolio. Built with ❤️ and Bootstrap 5.
+                © 2025 - JasmineMa. All rights reserved.
             </p>
         </div>
     </div>
