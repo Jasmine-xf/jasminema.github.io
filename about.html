@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - About</title>
-    <!-- Bootstrap CSS -->
+    
+    <!-- ===== CSS 样式表引入 ===== -->
+    <!-- Bootstrap 5.3.0 主框架CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
+    <!-- Bootstrap Icons 图标库 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- 自定义样式表 -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-    <!-- Header Container -->
+    <!-- ===== 页面头部区域 ===== -->
+    <!-- 全局导航栏容器 - 由components.js动态加载 -->
     <div id="header-container"></div>
 
-    <!-- 主要内容 -->
+    <!-- ===== 页面主要内容区域 ===== -->
+    <!-- 主内容容器 - margin-top: 80px 为固定导航栏留出空间 -->
     <main style="margin-top: 80px;">
-        <!-- About Header -->
+        
+        <!-- ===== About 页面头部区域 ===== -->
+        <!-- 全屏高度的关于我标题区域，包含主标题和描述 -->
         <header class="about-header position-relative vh-100 d-flex align-items-center justify-content-center overflow-hidden">
             <div class="gradient-bg"></div>
             <div class="header-content text-center position-relative z-3">
@@ -29,9 +36,11 @@
             </div>
         </header>
 
-        <!-- About Content -->
+        <!-- ===== About 页面内容区域 ===== -->
         <div class="about-content">
-            <!-- My Story Section -->
+            
+            <!-- ===== 我的故事区域 ===== -->
+            <!-- 个人介绍和背景故事，包含文字描述和头像图片 -->
             <section class="about-section position-relative py-5">
                 <div class="gradient-bg"></div>
                 <div class="container">
@@ -61,7 +70,8 @@
                 </div>
             </section>
 
-            <!-- Skills Section -->
+            <!-- ===== 技能专长区域 ===== -->
+            <!-- 展示个人技能和专长的卡片区域，分为设计、开发、工具三类 -->
             <section class="skills-section position-relative py-5">
                 <div class="gradient-bg"></div>
                 <div class="container">
@@ -122,7 +132,8 @@
                 </div>
             </section>
 
-            <!-- Experience Section -->
+            <!-- ===== 工作经历区域 ===== -->
+            <!-- 时间轴形式展示个人工作经历和职业发展 -->
             <section class="experience-section position-relative py-5">
                 <div class="gradient-bg"></div>
                 <div class="container">
@@ -172,7 +183,8 @@
                 </div>
             </section>
 
-            <!-- Values Section -->
+            <!-- ===== 个人价值观区域 ===== -->
+            <!-- 展示个人核心价值观和理念的卡片区域 -->
             <section class="values-section position-relative py-5">
                 <div class="gradient-bg"></div>
                 <div class="container">
@@ -218,7 +230,8 @@
                 </div>
             </section>
 
-            <!-- Contact Section -->
+            <!-- ===== 联系互动区域 ===== -->
+            <!-- 用户联系按钮和社交媒体链接区域 -->
             <section class="contact-section position-relative py-5">
                 <div class="gradient-bg"></div>
                 <div class="container">
@@ -254,13 +267,18 @@
         </div>
     </main>
 
-    <!-- Footer Container -->
+    <!-- ===== 页面底部区域 ===== -->
+    <!-- 全局页脚容器 - 由components.js动态加载 -->
     <div id="footer-container"></div>
 
-    <!-- Bootstrap JS -->
+    <!-- ===== JavaScript 脚本引入 ===== -->
+    <!-- Bootstrap 5.3.0 主框架JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 组件加载器 - 负责加载header和footer -->
     <script src="js/components.js"></script>
+    <!-- 通用功能脚本 - 导航、滚动等 -->
     <script src="js/common.js"></script>
+    <!-- About页面专用脚本 - 技能卡片交互、时间轴动画等 -->
     <script src="js/about.js"></script>
 </body>
 </html>

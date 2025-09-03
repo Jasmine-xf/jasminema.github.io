@@ -1,37 +1,60 @@
 /**
- * Component Loader for Portfolio Website
- * Dynamically loads header and footer components
+ * ===== 组件加载器 - 作品集网站 =====
+ * 功能：动态加载header和footer组件
+ * 作用：实现组件的全局化和复用
+ * 作者：Portfolio Team
+ * 版本：1.0.0
  */
 
+/**
+ * ===== 组件加载器类 =====
+ * 负责管理所有全局组件的加载和渲染
+ */
 class ComponentLoader {
     constructor() {
+        // 存储加载的组件内容
         this.components = {};
+        // 初始化组件加载器
         this.init();
     }
 
+    /**
+     * ===== 初始化方法 =====
+     * 按顺序执行：加载组件 -> 渲染组件 -> 设置导航
+     */
     async init() {
-        await this.loadComponents();
-        this.renderComponents();
-        this.setupNavigation();
+        await this.loadComponents();    // 异步加载组件文件
+        this.renderComponents();        // 渲染组件到页面
+        this.setupNavigation();         // 设置导航高亮
     }
 
+    /**
+     * ===== 加载组件方法 =====
+     * 从服务器异步加载header和footer组件文件
+     * 如果加载失败，则使用内置的备用组件
+     */
     async loadComponents() {
         try {
-            // Load header component
+            // 加载导航栏组件
             const headerResponse = await fetch('components/header.html');
             this.components.header = await headerResponse.text();
 
-            // Load footer component
+            // 加载页脚组件
             const footerResponse = await fetch('components/footer.html');
             this.components.footer = await footerResponse.text();
         } catch (error) {
-            console.error('Error loading components:', error);
-            this.loadFallbackComponents();
+            console.error('组件加载失败:', error);
+            this.loadFallbackComponents(); // 使用备用组件
         }
     }
 
+    /**
+     * ===== 加载备用组件方法 =====
+     * 当外部组件文件加载失败时，使用内置的备用组件
+     * 确保网站始终能正常显示导航和页脚
+     */
     loadFallbackComponents() {
-        // Fallback components if fetch fails
+        // 备用组件：当fetch失败时使用
         this.components.header = `
             <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
                 <div class="container">
@@ -131,62 +154,82 @@ class ComponentLoader {
         `;
     }
 
+    /**
+     * ===== 渲染组件方法 =====
+     * 将加载的组件内容渲染到页面的指定容器中
+     */
     renderComponents() {
-        // Render header
+        // 渲染导航栏组件
         const headerContainer = document.getElementById('header-container');
         if (headerContainer) {
             headerContainer.innerHTML = this.components.header;
         }
 
-        // Render footer
+        // 渲染页脚组件
         const footerContainer = document.getElementById('footer-container');
         if (footerContainer) {
             footerContainer.innerHTML = this.components.footer;
         }
     }
 
+    /**
+     * ===== 设置导航方法 =====
+     * 根据当前页面自动设置导航栏的高亮状态
+     */
     setupNavigation() {
-        // Set active navigation based on current page
+        // 获取当前页面标识
         const currentPage = this.getCurrentPage();
+        // 高亮对应的导航项
         this.highlightActiveNav(currentPage);
     }
 
+    /**
+     * ===== 获取当前页面标识方法 =====
+     * 通过URL路径判断当前页面，返回对应的页面标识
+     * 用于导航栏的高亮显示
+     */
     getCurrentPage() {
         const path = window.location.pathname;
-        if (path.includes('index.html') || path.endsWith('/')) return 'home';
-        if (path.includes('about.html')) return 'about';
-        if (path.includes('resume.html')) return 'resume';
-        if (path.includes('work.html')) return 'home'; // work page uses same nav as home
-        return 'home';
+        if (path.includes('index.html') || path.endsWith('/')) return 'home';      // 首页
+        if (path.includes('about.html')) return 'about';                          // 关于页面
+        if (path.includes('resume.html')) return 'resume';                        // 简历页面
+        if (path.includes('work.html')) return 'home';                            // 作品页面使用首页导航
+        return 'home';                                                            // 默认返回首页
     }
 
+    /**
+     * ===== 高亮当前导航项方法 =====
+     * 根据当前页面自动高亮对应的导航链接
+     */
     highlightActiveNav(page) {
-        // Remove all active classes
+        // 移除所有导航链接的激活状态
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.classList.remove('active');
             const highlighter = link.querySelector('.nav-highlighter');
             if (highlighter) {
-                highlighter.style.display = 'none';
+                highlighter.style.display = 'none'; // 隐藏高亮指示器
             }
         });
 
-        // Add active class to current page
+        // 为当前页面的导航链接添加激活状态
         const activeLink = document.querySelector(`[data-page="${page}"]`);
         if (activeLink) {
             activeLink.classList.add('active');
             const highlighter = activeLink.querySelector('.nav-highlighter');
             if (highlighter) {
-                highlighter.style.display = 'block';
+                highlighter.style.display = 'block'; // 显示高亮指示器
             }
         }
     }
 }
 
-// Initialize component loader when DOM is ready
+// ===== 页面初始化 =====
+// 当DOM加载完成后，初始化组件加载器
 document.addEventListener('DOMContentLoaded', () => {
     new ComponentLoader();
 });
 
-// Export for use in other scripts
+// ===== 全局导出 =====
+// 将ComponentLoader类导出到全局作用域，供其他脚本使用
 window.ComponentLoader = ComponentLoader;

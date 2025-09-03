@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Homepage</title>
-    <!-- Bootstrap CSS -->
+    
+    <!-- ===== CSS 样式表引入 ===== -->
+    <!-- Bootstrap 5.3.0 主框架CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
+    <!-- Bootstrap Icons 图标库 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- 自定义样式表 -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <!-- Header Container -->
+    <!-- ===== 页面头部区域 ===== -->
+    <!-- 全局导航栏容器 - 由components.js动态加载 -->
     <div id="header-container"></div>
 
-    <!-- 主要内容 -->
+    <!-- ===== 页面主要内容区域 ===== -->
+    <!-- 主内容容器 - margin-top: 80px 为固定导航栏留出空间 -->
     <main style="margin-top: 80px;">
-        <!-- Hero区域 -->
+        
+        <!-- ===== Hero 主标题区域 ===== -->
+        <!-- 全屏高度的主标题区域，包含标题、描述和按钮 -->
         <section class="hero position-relative vh-100 d-flex align-items-center justify-content-center overflow-hidden">
             <div class="gradient-bg"></div>
             <div class="hero-content text-center position-relative z-3">
@@ -40,11 +46,14 @@
             </div>
         </section>
 
-        <!-- 项目展示区 -->
+        <!-- ===== 项目展示区域 ===== -->
+        <!-- 展示主要项目的区域，包含三个不同布局的项目 -->
         <section class="project-showcase position-relative py-5">
+            <!-- 渐变背景装饰 -->
             <div class="gradient-bg"></div>
             
-            <!-- 左侧项目 -->
+            <!-- ===== 左侧项目展示 ===== -->
+            <!-- 左侧项目：文字在左，设备展示在右 -->
             <div class="project-item project-left d-flex align-items-center mb-5">
                 <div class="project-content flex-grow-1 pe-5">
                     <h2 class="project-title display-3 fw-bold mb-3">Project title</h2>
@@ -68,7 +77,8 @@
                 <div class="project-shade"></div>
             </div>
 
-            <!-- 中间项目 -->
+            <!-- ===== 中间项目展示 ===== -->
+            <!-- 中间项目：居中对齐，设备展示在下方 -->
             <div class="project-item project-center text-center mb-5">
                 <div class="project-content mb-5">
                     <span class="project-tag badge bg-light text-dark px-3 py-2 mb-3 d-inline-block">SaaS</span>
@@ -92,7 +102,8 @@
                 <div class="project-shade"></div>
             </div>
 
-            <!-- 右侧项目 -->
+            <!-- ===== 右侧项目展示 ===== -->
+            <!-- 右侧项目：文字在右，设备展示在左 -->
             <div class="project-item project-right d-flex align-items-center mb-5">
                 <div class="project-device iphone flex-grow-1 d-flex justify-content-center order-2">
                     <div class="device-screen">
@@ -117,7 +128,8 @@
             </div>
         </section>
 
-        <!-- 更多作品区域 1 -->
+        <!-- ===== 更多作品展示区域 1 ===== -->
+        <!-- 第一组项目卡片展示，使用Bootstrap网格布局 -->
         <section class="more-works position-relative py-5">
             <div class="gradient-bg"></div>
             <div class="container">
@@ -161,7 +173,8 @@
             </div>
         </section>
 
-        <!-- 更多作品区域 2 -->
+        <!-- ===== 更多作品展示区域 2 ===== -->
+        <!-- 第二组项目卡片展示，与第一组保持一致的布局 -->
         <section class="more-works position-relative py-5">
             <div class="gradient-bg"></div>
             <div class="container">
@@ -205,7 +218,8 @@
             </div>
         </section>
 
-        <!-- 联系区域 -->
+        <!-- ===== 联系信息区域 ===== -->
+        <!-- 用户联系表单和社交媒体链接区域 -->
         <section class="contact position-relative py-5">
             <div class="gradient-bg"></div>
             <div class="container">
@@ -226,7 +240,8 @@
             <div class="contact-avatar position-absolute"></div>
         </section>
 
-        <!-- 查看所有作品 -->
+        <!-- ===== 查看所有作品引导区域 ===== -->
+        <!-- 引导用户查看完整作品集的区域，包含跳转按钮 -->
         <section class="view-all-work position-relative py-5">
             <div class="gradient-bg"></div>
             <div class="container">
@@ -245,13 +260,18 @@
         </section>
     </main>
 
-    <!-- Footer Container -->
+    <!-- ===== 页面底部区域 ===== -->
+    <!-- 全局页脚容器 - 由components.js动态加载 -->
     <div id="footer-container"></div>
 
-    <!-- Bootstrap JS -->
+    <!-- ===== JavaScript 脚本引入 ===== -->
+    <!-- Bootstrap 5.3.0 主框架JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 组件加载器 - 负责加载header和footer -->
     <script src="js/components.js"></script>
+    <!-- 通用功能脚本 - 导航、滚动等 -->
     <script src="js/common.js"></script>
+    <!-- 首页专用脚本 - 项目交互、动画等 -->
     <script src="js/home.js"></script>
 </body>
 </html>

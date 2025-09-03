@@ -1,33 +1,44 @@
-<!-- Global Header Component -->
+<!-- ===== 全局导航栏组件 ===== -->
+<!-- 这个组件会被所有页面共享，修改这里会影响整个网站的导航栏 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
     <div class="container">
+        <!-- ===== 品牌标识区域 ===== -->
+        <!-- 左侧的品牌Logo和名称 -->
         <div class="navbar-brand d-flex align-items-center">
             <div class="avatar me-3"></div>
             <span class="fw-bold">Portfolio</span>
         </div>
+        <!-- ===== 移动端折叠按钮 ===== -->
+        <!-- 在小屏幕上显示/隐藏导航菜单的按钮 -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- ===== 导航菜单区域 ===== -->
+        <!-- 主要的导航链接，包含所有页面的入口 -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
+                <!-- ===== 首页/作品链接 ===== -->
                 <li class="nav-item">
                     <a class="nav-link fw-medium" href="index.html" data-page="home">
                         Work
                         <div class="nav-highlighter"></div>
                     </a>
                 </li>
+                <!-- ===== 关于我链接 ===== -->
                 <li class="nav-item">
                     <a class="nav-link fw-medium" href="about.html" data-page="about">
                         About
                         <div class="nav-highlighter"></div>
                     </a>
                 </li>
+                <!-- ===== 简历链接 ===== -->
                 <li class="nav-item">
                     <a class="nav-link fw-medium" href="resume.html" data-page="resume">
                         Resume
                         <div class="nav-highlighter"></div>
                     </a>
                 </li>
+                <!-- ===== 实验项目链接 ===== -->
                 <li class="nav-item">
                     <a class="nav-link fw-medium" href="#" data-page="experiments">
                         Experiments
@@ -35,6 +46,8 @@
                     </a>
                 </li>
             </ul>
+            <!-- ===== 右侧社交媒体链接 ===== -->
+            <!-- 导航栏右侧的社交媒体和联系方式 -->
             <div class="navbar-nav">
                 <a class="nav-link text-muted" href="#">
                     <i class="bi bi-twitter me-1"></i>@Your_Twitter
