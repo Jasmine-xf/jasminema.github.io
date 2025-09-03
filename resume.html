@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Resume</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/resume.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <div class="navbar-brand d-flex align-items-center">
+                <div class="avatar me-3"></div>
+                <span class="fw-bold">Portfolio</span>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="index.html">
+                            Work
+                            <div class="nav-highlighter"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="about.html">
+                            About
+                            <div class="nav-highlighter"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-medium" href="resume.html">
+                            Resume
+                            <div class="nav-highlighter"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#">
+                            Experiments
+                            <div class="nav-link"></div>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-nav">
+                    <a class="nav-link text-muted" href="#">
+                        <i class="bi bi-twitter me-1"></i>@Your_Twitter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main style="margin-top: 80px;">
+        <!-- Resume Header -->
+        <header class="resume-header position-relative vh-100 d-flex align-items-center justify-content-center overflow-hidden">
+            <div class="gradient-bg"></div>
+            <div class="header-content text-center position-relative z-3">
+                <h1 class="main-title display-1 fw-bold mb-4">Resume</h1>
+                <p class="header-description lead mx-auto" style="max-width: 600px;">
+                    My professional journey, skills, and achievements in design and development.
+                </p>
+                <div class="header-buttons d-flex gap-3 justify-content-center flex-wrap">
+                    <button class="btn btn-dark btn-lg px-4 py-3 rounded-3">
+                        <i class="bi bi-download me-2"></i>Download PDF
+                    </button>
+                    <button class="btn btn-outline-dark btn-lg px-4 py-3 rounded-3">
+                        <i class="bi bi-printer me-2"></i>Print
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Resume Content -->
+        <div class="resume-content">
+            <!-- Personal Info Section -->
+            <section class="personal-info position-relative py-5">
+                <div class="gradient-bg"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="personal-card card border-0 shadow-sm">
+                                <div class="card-body p-5 text-center">
+                                    <div class="resume-avatar mb-4"></div>
+                                    <h2 class="h1 fw-bold mb-3">Your Name</h2>
+                                    <p class="lead text-muted mb-4">Senior Product Designer & Frontend Developer</p>
+                                    <div class="contact-info d-flex justify-content-center gap-4 flex-wrap">
+                                        <div class="contact-item">
+                                            <i class="bi bi-envelope me-2"></i>
+                                            <span>your.email@example.com</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="bi bi-telephone me-2"></i>
+                                            <span>+1 (555) 123-4567</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="bi bi-geo-alt me-2"></i>
+                                            <span>San Francisco, CA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary Section -->
+            <section class="summary-section position-relative py-5">
+                <div class="gradient-bg"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="section-title display-4 fw-bold text-center mb-5">Professional Summary</h2>
+                            <div class="summary-content">
+                                <p class="lead text-muted text-center">
+                                    Experienced product designer and frontend developer with over 8 years of expertise 
+                                    in creating user-centered digital experiences. Passionate about combining design 
+                                    thinking with technical implementation to deliver innovative solutions that drive 
+                                    business value and user satisfaction.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="experience-section position-relative py-5">
+                <div class="gradient-bg"></div>
+                <div class="container">
+                    <h2 class="section-title display-4 fw-bold text-center mb-5">Work Experience</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="timeline">
+                                <div class="timeline-item d-flex mb-5">
+                                    <div class="timeline-marker me-4"></div>
+                                    <div class="timeline-content flex-grow-1">
+                                        <div class="experience-header d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h3 class="h4 fw-bold mb-1">Senior Product Designer</h3>
+                                                <p class="company text-primary fw-medium mb-1">Tech Company Inc.</p>
+                                                <p class="period text-muted">January 2022 - Present</p>
+                                            </div>
+                                            <span class="badge bg-primary px-3 py-2">Full-time</span>
+                                        </div>
+                                        <ul class="achievements list-unstyled">
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Led design initiatives for enterprise products, resulting in 40% improvement in user engagement</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Mentored 5 junior designers and established comprehensive design systems</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Collaborated with cross-functional teams to deliver 12+ major product releases</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item d-flex mb-5">
+                                    <div class="timeline-marker me-4"></div>
+                                    <div class="timeline-content flex-grow-1">
+                                        <div class="experience-header d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h3 class="h4 fw-bold mb-1">UX Designer</h3>
+                                                <p class="company text-primary fw-medium mb-1">Design Agency</p>
+                                                <p class="period text-muted">March 2020 - December 2021</p>
+                                            </div>
+                                            <span class="badge bg-secondary px-3 py-2">Contract</span>
+                                        </div>
+                                        <ul class="achievements list-unstyled">
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Designed user experiences for 15+ clients across fintech, healthcare, and e-commerce</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Conducted user research and usability testing for 8 major projects</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Increased client satisfaction scores by 35% through improved design processes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item d-flex mb-5">
+                                    <div class="timeline-marker me-4"></div>
+                                    <div class="timeline-content flex-grow-1">
+                                        <div class="experience-header d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h3 class="h4 fw-bold mb-1">Frontend Developer</h3>
+                                                <p class="company text-primary fw-medium mb-1">Startup Studio</p>
+                                                <p class="period text-muted">June 2018 - February 2020</p>
+                                            </div>
+                                            <span class="badge bg-info px-3 py-2">Full-time</span>
+                                        </div>
+                                        <ul class="achievements list-unstyled">
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Built 6 responsive web applications using React, Vue.js, and modern CSS</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Collaborated with designers to implement pixel-perfect interfaces</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Improved application performance by 60% through code optimization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="skills-section position-relative py-5">
+                <div class="gradient-bg"></div>
+                <div class="container">
+                    <h2 class="section-title display-4 fw-bold text-center mb-5">Technical Skills</h2>
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="skill-category card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h3 class="h5 fw-bold mb-3 text-center">
+                                        <i class="bi bi-palette text-primary me-2"></i>Design Skills
+                                    </h3>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>User Experience (UX)</span>
+                                            <span class="text-muted">95%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>User Interface (UI)</span>
+                                            <span class="text-muted">90%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>Prototyping</span>
+                                            <span class="text-muted">88%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 88%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4">
+                            <div class="skill-category card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h3 class="h5 fw-bold mb-3 text-center">
+                                        <i class="bi bi-code-slash text-primary me-2"></i>Development Skills
+                                    </h3>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>HTML/CSS/JavaScript</span>
+                                            <span class="text-muted">92%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 92%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>React & Vue.js</span>
+                                            <span class="text-muted">85%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>Responsive Design</span>
+                                            <span class="text-muted">90%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4">
+                            <div class="skill-category card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <h3 class="h5 fw-bold mb-3 text-center">
+                                        <i class="bi bi-tools text-primary me-2"></i>Tools & Software
+                                    </h3>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>Figma & Sketch</span>
+                                            <span class="text-muted">95%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>Adobe Creative Suite</span>
+                                            <span class="text-muted">80%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>VS Code & Git</span>
+                                            <span class="text-muted">88%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-primary" style="width: 88%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="education-section position-relative py-5">
+                <div class="gradient-bg"></div>
+                <div class="container">
+                    <h2 class="section-title display-4 fw-bold text-center mb-5">Education</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="education-item card border-0 shadow-sm mb-4">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h3 class="h5 fw-bold mb-2">Bachelor of Science in Design</h3>
+                                            <p class="institution text-primary fw-medium mb-1">University of Design & Technology</p>
+                                            <p class="period text-muted mb-2">2014 - 2018</p>
+                                            <p class="description text-muted mb-0">
+                                                Graduated with honors. Focused on user experience design, 
+                                                visual communication, and digital media. Completed capstone 
+                                                project on accessibility in web design.
+                                            </p>
+                                        </div>
+                                        <span class="badge bg-success px-3 py-2">GPA: 3.8/4.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="education-item card border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h3 class="h5 fw-bold mb-2">UX Design Certification</h3>
+                                            <p class="institution text-primary fw-medium mb-1">Google UX Design</p>
+                                            <p class="period text-muted mb-2">2020</p>
+                                            <p class="description text-muted mb-0">
+                                                Completed comprehensive UX design program covering user research, 
+                                                wireframing, prototyping, and usability testing.
+                                            </p>
+                                        </div>
+                                        <span class="badge bg-info px-3 py-2">Certified</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section class="certifications-section position-relative py-5">
+                <div class="gradient-bg"></div>
+                <div class="container">
+                    <h2 class="section-title display-4 fw-bold text-center mb-5">Certifications & Awards</h2>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="certification-card card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body p-4">
+                                    <div class="certification-icon mb-3">
+                                        <i class="bi bi-award display-4 text-warning"></i>
+                                    </div>
+                                    <h3 class="h5 fw-bold mb-2">Best UX Design 2023</h3>
+                                    <p class="text-muted mb-3">Design Excellence Awards</p>
+                                    <span class="badge bg-warning text-dark">Winner</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="certification-card card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body p-4">
+                                    <div class="certification-icon mb-3">
+                                        <i class="bi bi-patch-check display-4 text-success"></i>
+                                    </div>
+                                    <h3 class="h5 fw-bold mb-2">Adobe Certified Expert</h3>
+                                    <p class="text-muted mb-3">Adobe Creative Suite</p>
+                                    <span class="badge bg-success">Certified</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="certification-card card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body p-4">
+                                    <div class="certification-icon mb-3">
+                                        <i class="bi bi-trophy display-4 text-primary"></i>
+                                    </div>
+                                    <h3 class="h5 fw-bold mb-2">Innovation Award 2022</h3>
+                                    <p class="text-muted mb-3">Tech Innovation Summit</p>
+                                    <span class="badge bg-primary">Recipient</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer bg-light border-top py-5 mt-5">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-auto">
+                    <div class="d-flex gap-4 flex-wrap justify-content-center">
+                        <a href="index.html" class="text-muted text-decoration-none">Works</a>
+                        <a href="about.html" class="text-muted text-decoration-none">About</a>
+                        <a href="resume.html" class="text-muted text-decoration-none">Resume</a>
+                        <a href="#" class="text-muted text-decoration-none">Experiments</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">© 2021 your name</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <button class="btn btn-link text-muted text-decoration-none back-to-top">
+                        <i class="bi bi-arrow-up me-2"></i>Back up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/resume.js"></script>
+</body>
+</html>
