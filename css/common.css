@@ -175,7 +175,7 @@
     bottom: 24px;
     width: 200px;
     height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url("../assets/images/logo.jpg");
     border-radius: 50%;
     z-index: 1;
 }
