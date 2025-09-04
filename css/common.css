@@ -175,9 +175,88 @@
     bottom: 24px;
     width: 200px;
     height: 200px;
-    background-image: url("../assets/images/logo.jpg");
+    background-image: url("../assets/images/logo.png");
     border-radius: 50%;
     z-index: 1;
+}
+
+/* 背景图 left*/
+.bg-left-img1 {
+    background-image: url('../assets/images/type=01.png');
+    background-size: auto;
+    background-position:left;
+    background-repeat: no-repeat;
+}
+.bg-left-img2 {
+    background-image: url('../assets/images/type=02.png');
+    background-size: auto;
+    background-position:left;
+    background-repeat: no-repeat;
+}
+.bg-left-img3 {
+    background-image: url('../assets/images/type=03.png');
+    background-size: auto;
+    background-position:left;
+    background-repeat: no-repeat;
+}
+.bg-left-img4 {
+    background-image: url('../assets/images/type=04.png');
+    background-size: auto;
+    background-position:left;
+    background-repeat: no-repeat;
+}
+
+/* 背景图 right*/
+.bg-right-img1 {
+    background-image: url('../assets/images/type=01.png');
+    background-size: auto;
+    background-position:right;
+    background-repeat: no-repeat;
+}
+.bg-right-img2 {
+    background-image: url('../assets/images/type=02.png');
+    background-size: auto;
+    background-position:right;
+    background-repeat: no-repeat;
+}
+.bg-right-img3 {
+    background-image: url('../assets/images/type=03.png');
+    background-size: auto;
+    background-position:right;
+    background-repeat: no-repeat;
+}
+.bg-right-img4 {
+    background-image: url('../assets/images/type=04.png');
+    background-size: auto;
+    background-position:right;
+    background-repeat: no-repeat;
+}
+
+
+/* 背景图 center*/
+.bg-center-img1 {
+    background-image: url('../assets/images/type=02.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-center-img2 {
+    background-image: url('../assets/images/type=02.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-center-img3 {
+    background-image: url('../assets/images/type=03.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-center-img4 {
+    background-image: url('../assets/images/type-04.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* 响应式调整 */
