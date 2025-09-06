@@ -235,29 +235,29 @@ function initProgressBars() {
     // 监听技能部分的可见性
     const skillsSection = document.querySelector('.skills-section');
     if (skillsSection) {
+        const progressBars = skillsSection.querySelectorAll('.progress-bar');
+        // 初始化所有进度条宽度为0
+        progressBars.forEach(bar => {
+            bar.style.width = '0%';
+        });
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     // 延迟触发进度条动画
                     setTimeout(() => {
-                        const progressBars = entry.target.querySelectorAll('.progress-bar');
                         progressBars.forEach((bar, index) => {
+                            // 目标宽度从 data-width 属性获取
+                            const targetWidth = bar.getAttribute('data-width') || '0';
                             setTimeout(() => {
-                                const width = bar.getAttribute('style')?.match(/width:\s*(\d+)%/)?.[1] || '0';
-                                bar.style.width = '0%';
-                                
-                                setTimeout(() => {
-                                    bar.style.width = width + '%';
-                                }, 100);
+                                bar.style.width = targetWidth + '%';
                             }, index * 200);
                         });
                     }, 500);
-                    
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
-        
         observer.observe(skillsSection);
     }
 }
