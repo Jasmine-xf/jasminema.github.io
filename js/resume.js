@@ -196,7 +196,7 @@ function downloadResume() {
         
         // 创建下载链接（这里可以连接到实际的PDF文件）
         const link = document.createElement('a');
-        link.href = '../assets/file/Jasmine(Xuefei)Ma_CV.pdf';
+        link.href = 'assets/file/Jasmine(Xuefei)Ma_CV.pdf';
         link.download = 'Jasmine(Xuefei)Ma_CV.pdf';
         link.click();
         
