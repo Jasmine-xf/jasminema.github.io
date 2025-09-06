@@ -343,3 +343,7 @@ p{
     -webkit-backdrop-filter: blur(16px); /* 兼容Safari */
     background: rgba(255, 255, 255, 0.5); /* 50% 透明白色 */
 }
+
+html, body {
+    overflow-x: hidden;
+}
