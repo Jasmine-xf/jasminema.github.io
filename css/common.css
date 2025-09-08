@@ -272,25 +272,25 @@ p{
  }
 /* 背景图 center*/
 .bg-center-img1 {
-    background-image: url(' assets/images/type=02.png');
+    background-image: url('assets/images/type=02.png');
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
 }
 .bg-center-img2 {
-    background-image: url(' assets/images/type=02.png');
+    background-image: url('assets/images/type=02.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .bg-center-img3 {
-    background-image: url(' assets/images/type=03.png');
+    background-image: url('assets/images/type=03.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .bg-center-img4 {
-    background-image: url(' assets/images/type-04.jpg');
+    background-image: url('assets/images/type-04.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
