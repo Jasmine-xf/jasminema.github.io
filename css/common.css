@@ -13,7 +13,7 @@
     font-weight: 400;
 }
 .display-1 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .section-title {
  font-size: 30px !important;
@@ -219,7 +219,7 @@ p{
 .bg-left-img1 {
     background-image: url('../assets/images/type=01.png');
     background-size: auto;
-    background-position:left;
+    background-position:left bottom;
     background-repeat: no-repeat;
 }
 .bg-left-img2 {
@@ -245,13 +245,13 @@ p{
 .bg-right-img1 {
     background-image: url('../assets/images/type=01.png');
     background-size: auto;
-    background-position:right;
+    background-position:right bottom;
     background-repeat: no-repeat;
 }
 .bg-right-img2 {
     background-image: url('../assets/images/type=02.png');
     background-size: auto;
-    background-position:right;
+    background-position:right bottom;
     background-repeat: no-repeat;
 }
 .bg-right-img3 {
@@ -267,11 +267,13 @@ p{
     background-repeat: no-repeat;
 }
 
-
+ .bg-grey{
+    background-color: #efefef;
+ }
 /* 背景图 center*/
 .bg-center-img1 {
     background-image: url('../assets/images/type=02.png');
-    background-size: cover;
+    background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -346,4 +348,13 @@ p{
 
 html, body {
     overflow-x: hidden;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navbar-nav {
+    gap: 2rem;
 }

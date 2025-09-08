@@ -3,7 +3,7 @@
 /* About Header */
 .about-header {
     position: relative;
-    min-height: 100vh;
+ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,10 +31,6 @@
     font-weight: 600;
 }
 
-.about-placeholder::before {
-    content: '📸 About Me Photo';
-    text-align: center;
-}
 
 /* Skills Section */
 .skill-category {
@@ -149,6 +145,95 @@
     transform: translateY(-2px);
 }
 
+/* Stickers */
+/* .sticker-link {
+    transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+    z-index: 2;
+} */
+
+@keyframes sticker-shake {
+    0% { transform: rotate(-2deg) scale(1.08); }
+    20% { transform: rotate(4deg) scale(1.12); }
+    40% { transform: rotate(-6deg) scale(1.10); }
+    60% { transform: rotate(8deg) scale(1.13); }
+    80% { transform: rotate(-4deg) scale(1.09); }
+    100% { transform: rotate(0deg) scale(1.08); }
+}
+
+
+.sticker-img {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.sticker-link:hover .sticker-img {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+/* Sticker 定位和初始旋转 */
+.sticker-img[title="Toronto Yú Theatre"] {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    width: 120px;
+    transform: rotate(-8deg);
+}
+.sticker-img[title="Toronto Fringe Festival"] {
+    position: absolute;
+    left: 60%;
+    top: 18%;
+    width: 140px;
+    transform: rotate(12deg);
+
+}
+.sticker-img[title="Singer & Guitar"] {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    width: 160px;
+    transform: rotate(5deg);
+}
+.sticker-img[title="Frisbee"] {
+    position: absolute;
+    left: 70%;
+    top: 60%;
+    width: 90px;
+    transform: rotate(7deg);
+}
+.sticker-img[title="Allegro"] {
+    position: absolute;
+    left: 60%;
+    top: 75%;
+    width: 80px;
+    transform: rotate(-10deg);
+}
+.sticker-img[title="Calligraphy"] {
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    width: 80px;
+    transform: rotate(-10deg);
+}
+.sticker-img[title="Kunqu Opera"] {
+    position: absolute;
+    left: 40%;
+    top: 0%;
+    width: 90px;
+    transform: rotate(15deg);
+}
+.sticker-img[title="D&D"] {
+    position: absolute;
+    left: 55%;
+    top: 36%;
+    width: 120px;
+    transform: rotate(15deg);
+}
+
+.sticker-img:hover {
+    transform: rotate(0deg) !important;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .about-header {
@@ -216,3 +301,23 @@
         padding: 16px;
     }
 }
+.sticker-img:hover {
+    transform: rotate(0deg) !important;
+}
+
+
+
+.tooltip-inner{
+ background-color: #3e3e3e !important;
+ width: 2000px !important;   
+}
+
+
+
+
+
+
+
+
+
+
