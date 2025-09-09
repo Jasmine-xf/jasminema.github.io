@@ -174,14 +174,14 @@
 /* Sticker 定位和初始旋转 */
 .sticker-img[title="Toronto Yú Theatre"] {
     position: absolute;
-    left: 20%;
+    left: 10%;
     top: 10%;
     width: 120px;
     transform: rotate(-8deg);
 }
 .sticker-img[title="Toronto Fringe Festival"] {
     position: absolute;
-    left: 60%;
+    left: 70%;
     top: 18%;
     width: 140px;
     transform: rotate(12deg);
@@ -196,7 +196,7 @@
 }
 .sticker-img[title="Frisbee"] {
     position: absolute;
-    left: 70%;
+    left: 80%;
     top: 60%;
     width: 90px;
     transform: rotate(7deg);
@@ -210,21 +210,21 @@
 }
 .sticker-img[title="Calligraphy"] {
     position: absolute;
-    left: 20%;
+    left: 18%;
     top: 30%;
     width: 80px;
     transform: rotate(-10deg);
 }
 .sticker-img[title="Kunqu Opera"] {
     position: absolute;
-    left: 40%;
-    top: 0%;
+    left: 10%;
+    top: 50%;
     width: 90px;
     transform: rotate(15deg);
 }
 .sticker-img[title="D&D"] {
     position: absolute;
-    left: 55%;
+    left: 60%;
     top: 36%;
     width: 120px;
     transform: rotate(15deg);
@@ -309,7 +309,6 @@
 
 .tooltip-inner{
  background-color: #3e3e3e !important;
- width: 2000px !important;   
 }
 
 
