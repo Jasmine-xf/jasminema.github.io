@@ -358,3 +358,7 @@ html, body {
 .navbar-nav {
     gap: 2rem;
 }
+
+p {
+  text-align: justify;
+}
