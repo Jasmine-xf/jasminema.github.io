@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.forEach(function (tooltipTriggerEl) {
         new bootstrap.Tooltip(tooltipTriggerEl, {
-            placement: 'bottom',  
+            placement: 'top',  // 改为top，让tooltip显示在sticker上方
             trigger: 'hover',
             boundary: 'viewport',
-          
+            offset: [0, 10]  // 添加偏移量，让tooltip与sticker保持适当距离
         });
     });
 });

@@ -392,11 +392,11 @@
   display: none !important;
 }
 
-
-/* .tooltip {
+/* 确保tooltip显示在sticker上方 */
+.tooltip {
   text-align: center;
-  transform: translateY(-20px) !important;
-} */
+  transform: translateY(-10px) !important;
+}
 
 .tooltip-inner {
   background-color: #3e3e3e !important;
