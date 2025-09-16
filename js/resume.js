@@ -131,7 +131,7 @@ function initCardInteractions() {
         
         // 添加点击涟漪效果
         card.addEventListener('click', function(e) {
-            createRippleEffect(e, this);
+            PortfolioUtils.createRippleEffect(e, this);
         });
     });
     
@@ -160,7 +160,7 @@ function initCardInteractions() {
         
         // 添加点击涟漪效果
         card.addEventListener('click', function(e) {
-            createRippleEffect(e, this);
+            PortfolioUtils.createRippleEffect(e, this);
         });
     });
 }
@@ -262,61 +262,7 @@ function initProgressBars() {
     }
 }
 
-function createRippleEffect(event, element) {
-    const ripple = document.createElement('span');
-    const rect = element.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = event.clientX - rect.left - size / 2;
-    const y = event.clientY - rect.top - size / 2;
-    
-    ripple.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        left: ${x}px;
-        top: ${y}px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        transform: scale(0);
-        animation: ripple 0.6s linear;
-        pointer-events: none;
-    `;
-    
-    element.style.position = 'relative';
-    element.style.overflow = 'hidden';
-    element.appendChild(ripple);
-    
-    setTimeout(() => {
-        element.removeChild(ripple);
-    }, 600);
-}
-
-// 添加涟漪动画样式
-const rippleStyles = document.createElement('style');
-rippleStyles.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-    
-    .animate-in {
-        animation: fadeInUp 0.8s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(rippleStyles);
+// 使用common.js中的createRippleEffect函数
 
 // 添加打印样式
 const printStyles = document.createElement('style');
