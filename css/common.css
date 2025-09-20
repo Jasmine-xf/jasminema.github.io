@@ -4,11 +4,7 @@
   margin: 0 auto;
 }
 
-
-
-
-/* 全站 字体问题*/
-
+/* 全站字体样式 */
 .lead {
     font-weight: 400;
 }
@@ -16,17 +12,22 @@
     font-size: 3rem;
 }
 .section-title {
- font-size: 30px !important;
- margin-bottom:0 !important;
+    font-size: 30px !important;
+    margin-bottom: 0 !important;
 }
-h3{
+h3 {
     font-size: 1.25rem !important;
 }
+<<<<<<< HEAD
 h4{
     font-size: 1rem !important;
 }
 p{
+=======
+p {
+>>>>>>> 5b79ba41687e7c5781ef7ebf4284b8ffc7d53553
     font-weight: 400;
+    text-align: justify;
 }
 
 
@@ -332,21 +333,21 @@ p{
         height: 210px;
     }
 }
-/* 毛玻璃卡片样式 */
-.glass-card-00 {
+/* 统一的毛玻璃卡片样式 */
+.glass-card {
     border-radius: 12px;
-    background: #FFF;
-    box-shadow: 0 32px 40px 0 rgba(0, 0, 0, 0.16); /* Elevation03 */
-    backdrop-filter: blur(16px); /* 毛玻璃效果 */
-    -webkit-backdrop-filter: blur(16px); /* 兼容Safari */
+    box-shadow: 0 32px 40px 0 rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.3s ease;
 }
 
-.glass-card-50 {
-    border-radius: 12px;
-    box-shadow: 0 32px 40px 0 rgba(0, 0, 0, 0.16); /* Elevation03 */
-    backdrop-filter: blur(16px); /* 毛玻璃效果 */
-    -webkit-backdrop-filter: blur(16px); /* 兼容Safari */
-    background: rgba(255, 255, 255, 0.5); /* 50% 透明白色 */
+.glass-card-solid {
+    background: #FFF;
+}
+
+.glass-card-transparent {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 html, body {
@@ -360,8 +361,4 @@ html, body {
 }
 .navbar-nav {
     gap: 2rem;
-}
-
-p {
-  text-align: justify;
 }

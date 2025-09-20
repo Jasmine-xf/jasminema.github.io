@@ -32,7 +32,7 @@
 }
 
 
-/* Skills Section */
+/* Skills Section - 使用通用毛玻璃样式 */
 .skill-category {
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(100px);
@@ -305,11 +305,6 @@
     transform: rotate(0deg) !important;
 }
 
-
-
-
-
-
 .img-grid {
   width: 100%;               /* 占满所在列 */
   height: 200px;             /* 固定统一高度，可改成你喜欢的 */
@@ -397,11 +392,19 @@
   display: none !important;
 }
 
+<<<<<<< HEAD
 
 .tooltip{
     position: relative;
 }
 
+=======
+/* 确保tooltip显示在sticker上方 */
+.tooltip {
+  text-align: center;
+  transform: translateY(-10px) !important;
+}
+>>>>>>> 5b79ba41687e7c5781ef7ebf4284b8ffc7d53553
 
 .tooltip-inner {
   background-color: #3e3e3e !important;

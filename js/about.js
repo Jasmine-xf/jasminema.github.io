@@ -6,10 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.forEach(function (tooltipTriggerEl) {
         new bootstrap.Tooltip(tooltipTriggerEl, {
-            placement: 'bottom',  
+            placement: 'top',  // 改为top，让tooltip显示在sticker上方
             trigger: 'hover',
             boundary: 'viewport',
+<<<<<<< HEAD
             offset: [0, 24], 
+=======
+            offset: [0, 10]  // 添加偏移量，让tooltip与sticker保持适当距离
+>>>>>>> 5b79ba41687e7c5781ef7ebf4284b8ffc7d53553
         });
     });
 });
@@ -44,7 +48,7 @@ function initSkillCardInteractions() {
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0) scale(1)';
         });
-        card.addEventListener('click', (e) => createRippleEffect(e, card));
+        card.addEventListener('click', (e) => PortfolioUtils.createRippleEffect(e, card));
     });
 }
 
@@ -79,7 +83,7 @@ function initValueCardInteractions() {
             card.style.transform = 'translateY(0) scale(1)';
             card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
         });
-        card.addEventListener('click', (e) => createRippleEffect(e, card));
+        card.addEventListener('click', (e) => PortfolioUtils.createRippleEffect(e, card));
     });
 }
 
@@ -149,6 +153,7 @@ function showContactModal() {
     });
 }
 
+<<<<<<< HEAD
 function createRippleEffect(event, element) {
     const ripple = document.createElement('span');
     const rect = element.getBoundingClientRect();
@@ -186,3 +191,6 @@ document.head.appendChild(rippleStyles);
 
 
 
+=======
+// 使用common.js中的createRippleEffect函数
+>>>>>>> 5b79ba41687e7c5781ef7ebf4284b8ffc7d53553
