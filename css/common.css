@@ -352,6 +352,11 @@ html, body {
     overflow-x: hidden;
 }
 
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
 .navbar-nav .nav-link {
     font-size: 1.25rem;
     padding-left: 1rem;

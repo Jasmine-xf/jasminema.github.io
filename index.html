@@ -39,9 +39,9 @@
                 </p>
                 <div class="hero-buttons d-flex gap-3 justify-content-center flex-wrap">
                  
-                    <button class="btn btn-outline-dark btn-lg px-4 py-3 rounded-3">
+                    <a href="#projects" class="btn btn-outline-dark btn-lg px-4 py-3 rounded-3">
                         Discover my works <i class="bi bi-arrow-right ms-2"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -51,7 +51,7 @@
 
 
         <!-- ===== 技能专长区域 ===== -->
-    <section class="skills-section position-relative bg-grey py-5 text-center">
+    <section class="skills-section position-relative bg-grey py-5 text-center projects">
         <div class="container">
             <h2 class="section-title display-4 fw-bold text-center pb-5">Skills & Tools</h2>
             
@@ -117,84 +117,113 @@
 
 
         <!-- ===== 项目展示区域 ===== -->
-        <!-- 展示主要项目的区域，包含三个不同布局的项目 -->
-        <section class="project-showcase position-relative py-5">
+        <!-- 展示主要项目的区域，包含Ontario Public Service和Course Projects -->
+        <section id="projects" class="project-showcase position-relative py-5">
             <!-- 渐变背景装饰 -->
             <div class="gradient-bg"></div>
             
-            <!-- ===== 左侧项目展示 ===== -->
-            <!-- 左侧项目：文字在左，设备展示在右 -->
-            <div class="project-item project-left d-flex align-items-center mb-5 content">
-                <div class="project-content flex-grow-1 pe-5">
-                    <h2 class="project-title display-3 fw-bold mb-3">Project title</h2>
-                    <span class="project-tag badge bg-light text-dark px-3 py-2 mb-3 d-inline-block">Mobile App</span>
-                    <p class="project-description lead text-muted mb-4" style="max-width: 400px;">
-                        You can add what outcomes has this project brought after your design! 
-                        For example, can show some real data.
-                    </p>
-                    <button class="btn btn-outline-dark px-4 py-2 rounded-3">
-                        Tell me more <i class="bi bi-arrow-right ms-2"></i>
-                    </button>
-                </div>
-                <div class="project-device iphone flex-grow-1 d-flex justify-content-center">
-                    <div class="device-screen">
-                        <div class="screen-content text-center p-4">
-                            <p class="screen-text h2 fw-bold mb-2">😎<br>I made you looked.</p>
-                            <p class="screen-subtext text-muted">You can have the rest of the empty space here.</p>
+            <!-- ===== Ontario Public Service 项目区域 ===== -->
+            <div class="project-section position-relative py-5">
+                <div class="gradient-bg"></div>
+                <div class="container">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-4">
+                            <h2 class="section-title display-4 fw-bold mb-0">Ontario Public Service</h2>
+                        </div>
+                        <div class="col-lg-8">
+                            <p class="lead text-muted mb-0">
+                                During my internship at the Ontario Public Service, I focused on designing digital experiences 
+                                that improve citizen services and government operations. My work involved user research, 
+                                service design, and creating accessible solutions for diverse user needs.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目网格展示 -->
+                    <div class="row g-4">
+                        <!-- 项目1 -->
+                        <div class="col-lg-6">
+                            <div class="project-card glass-card glass-card-solid p-4 h-100">
+                                <div class="project-screenshot mb-4">
+                                    <div class="screenshot-placeholder bg-light rounded-3 d-flex align-items-center justify-content-center" style="height: 200px;">
+                                        <div class="text-center">
+                                            <i class="bi bi-laptop display-4 text-muted mb-2"></i>
+                                            <p class="text-muted">Service Portal Design</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-card-title h4 fw-bold mb-3">Citizen Service Portal Redesign</h3>
+                            </div>
+                        </div>
+                        
+                        <!-- 项目2 -->
+                        <div class="col-lg-6">
+                            <div class="project-card glass-card glass-card-solid p-4 h-100">
+                                <div class="project-screenshot mb-4">
+                                    <div class="screenshot-placeholder bg-light rounded-3 d-flex align-items-center justify-content-center" style="height: 200px;">
+                                        <div class="text-center">
+                                            <i class="bi bi-phone display-4 text-muted mb-2"></i>
+                                            <p class="text-muted">Mobile App Design</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-card-title h4 fw-bold mb-3">Government Services Mobile App</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-shade"></div>
             </div>
 
-            <!-- ===== 中间项目展示 ===== -->
-            <!-- 中间项目：居中对齐，设备展示在下方 -->
-            <div class="project-item project-center text-center mb-5 content">
-                <div class="project-content mb-5">
-                    <span class="project-tag badge bg-light text-dark px-3 py-2 mb-3 d-inline-block">SaaS</span>
-                    <h2 class="project-title display-3 fw-bold mb-3">Project title</h2>
-                    <p class="project-description lead text-muted mx-auto" style="max-width: 400px;">
-                        You can add what outcomes has this project brought after your design! 
-                        For example, can show some real data.
-                    </p>
-                    <button class="btn btn-outline-dark px-4 py-2 rounded-3">
-                        Tell me more <i class="bi bi-arrow-right ms-2"></i>
-                    </button>
-                </div>
-                <div class="project-device ipad d-flex justify-content-center">
-                    <div class="device-screen">
-                        <div class="screen-content text-center p-4">
-                            <p class="screen-text h2 fw-bold mb-2">😎<br>I made you looked.</p>
-                            <p class="screen-subtext text-muted">You can have the rest of the empty space here.</p>
+            <!-- ===== Course Projects 项目区域 ===== -->
+            <div class="project-section position-relative py-5 bg-grey">
+                <div class="gradient-bg"></div>
+                <div class="container">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-lg-4">
+                            <h2 class="section-title display-4 fw-bold mb-0">Course Projects</h2>
+                        </div>
+                        <div class="col-lg-8">
+                            <p class="lead text-muted mb-0">
+                                Academic projects that showcase my learning journey in UX design, data analysis, 
+                                and human-computer interaction. These projects demonstrate my ability to apply 
+                                theoretical knowledge to real-world design challenges.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 项目网格展示 -->
+                    <div class="row g-4">
+                        <!-- 项目3 -->
+                        <div class="col-lg-6">
+                            <div class="project-card glass-card glass-card-solid p-4 h-100">
+                                <div class="project-screenshot mb-4">
+                                    <div class="screenshot-placeholder bg-light rounded-3 d-flex align-items-center justify-content-center" style="height: 200px;">
+                                        <div class="text-center">
+                                            <i class="bi bi-graph-up display-4 text-muted mb-2"></i>
+                                            <p class="text-muted">Data Visualization</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-card-title h4 fw-bold mb-3">Healthcare Data Analysis Dashboard</h3>
+                            </div>
+                        </div>
+                        
+                        <!-- 项目4 -->
+                        <div class="col-lg-6">
+                            <div class="project-card glass-card glass-card-solid p-4 h-100">
+                                <div class="project-screenshot mb-4">
+                                    <div class="screenshot-placeholder bg-light rounded-3 d-flex align-items-center justify-content-center" style="height: 200px;">
+                                        <div class="text-center">
+                                            <i class="bi bi-people display-4 text-muted mb-2"></i>
+                                            <p class="text-muted">User Research</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="project-card-title h4 fw-bold mb-3">Accessibility in Digital Learning</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-shade"></div>
-            </div>
-
-            <!-- ===== 右侧项目展示 ===== -->
-            <!-- 右侧项目：文字在右，设备展示在左 -->
-            <div class="project-item project-right d-flex align-items-center mb-5 content">
-                <div class="project-device iphone flex-grow-1 d-flex justify-content-center order-2">
-                    <div class="device-screen">
-                        <div class="screen-content text-center p-4">
-                            <p class="screen-text h2 fw-bold mb-2">😎<br>I made you looked.</p>
-                            <p class="screen-subtext text-muted">You can have the rest of the empty space here.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content flex-grow-1 ps-5 order-1">
-                    <h2 class="project-title display-3 fw-bold mb-3">Project title</h2>
-                    <span class="project-tag badge bg-light text-dark px-3 py-2 mb-3 d-inline-block">Mobile App</span>
-                    <p class="project-description lead text-muted mb-4" style="max-width: 400px;">
-                        You can add what outcomes has this project brought after your design! 
-                        For example, can show some real data.
-                    </p>
-                    <button class="btn btn-outline-dark px-4 py-2 rounded-3">
-                        Tell me more <i class="bi bi-arrow-right ms-2"></i>
-                    </button>
-                </div>
-                <div class="project-shade"></div>
             </div>
         </section>
 

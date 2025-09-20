@@ -5,6 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     initHomepageFeatures();
 });
 
+// 全局滚动到项目区域的函数
+function scrollToProjects() {
+    const projectSection = document.getElementById('projects');
+    if (projectSection) {
+        projectSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
 // 初始化Homepage功能
 function initHomepageFeatures() {
     initProjectInteractions();
