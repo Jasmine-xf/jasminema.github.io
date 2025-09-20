@@ -9,11 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             placement: 'top',  // 改为top，让tooltip显示在sticker上方
             trigger: 'hover',
             boundary: 'viewport',
-<<<<<<< HEAD
             offset: [0, 24], 
-=======
-            offset: [0, 10]  // 添加偏移量，让tooltip与sticker保持适当距离
->>>>>>> 5b79ba41687e7c5781ef7ebf4284b8ffc7d53553
         });
     });
 });
