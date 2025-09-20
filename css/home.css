@@ -8,7 +8,6 @@ main {
 /* Hero区域 */
 .hero {
     position: relative;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -221,6 +220,14 @@ main {
     margin-right: auto;
 }
 
+
+.skill-category-icon img{
+    width: 70px;
+}
+.tool-icon img{
+    width: 30px;
+}
+
 /* 响应式设计 */
 @media (max-width: 1024px) {
     .hero-title,
@@ -280,6 +287,11 @@ main {
     .contact-avatar {
         display: none;
     }
+
+    .skill-category-icon img{
+    width: 50px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -302,3 +314,5 @@ main {
         border-radius: 24px;
     }
 }
+
+

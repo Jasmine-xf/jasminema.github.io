@@ -398,10 +398,10 @@
 }
 
 
-/* .tooltip {
-  text-align: center;
-  transform: translateY(-20px) !important;
-} */
+.tooltip{
+    position: relative;
+}
+
 
 .tooltip-inner {
   background-color: #3e3e3e !important;
@@ -409,4 +409,5 @@
   padding: 12px 16px;
   font-size: 14px;
   max-width: 260px; /* 适合当说明框 */
+
 }

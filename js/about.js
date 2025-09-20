@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             placement: 'bottom',  
             trigger: 'hover',
             boundary: 'viewport',
-          
+            offset: [0, 24], 
         });
     });
 });
@@ -181,3 +181,8 @@ rippleStyles.textContent = `
     }
 `;
 document.head.appendChild(rippleStyles);
+
+
+
+
+
