@@ -365,7 +365,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
+    border-radius: 12px;
 }
 
 @media (max-width: 768px) {
@@ -398,7 +398,10 @@ main {
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+    transition: all .3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
 }
 
 .screenshot-cta:hover {
@@ -408,6 +411,22 @@ main {
 
 .screenshot-cta:active {
     transform: translateY(0);
+}
+
+/* 悬停时显示按钮 */
+.screenshot-placeholder:hover .screenshot-cta {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    background:  rgba(0,0,0,0.16);
+    border: 2px solid #fff;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.screenshot-placeholder:hover .screenshot-cta:hover {
+    transform: scale(1) translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 /* 项目标签样式 */

@@ -1,26 +1,39 @@
-/* 通用样式 - 配合Bootstrap使用 */
-.content {
-  max-width: 1140px !important;
-  margin: 0 auto;
+.mw-1400 {
+    max-width: 1400px;
+    margin: 0 auto;
 }
+
+.mw-1140 .content {
+    max-width: 1140px !important;
+    margin: 0 auto;
+}
+
+.mw-800 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 
 /* 全站字体样式 */
 .lead {
     font-weight: 400;
 }
 .display-1 {
-    font-size: 3rem;
+    font-size: 2.4rem;
 }
 .section-title {
     font-size: 30px !important;
     margin-bottom: 0 !important;
 }
+h2 {
+    font-size: 1.5rem !important;
+}
 h3 {
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
 }
 
 h4{
-    font-size: 1rem !important;
+    font-size: 0.75rem !important;
 }
 p{
 
