@@ -1,0 +1,100 @@
+[
+  {
+    "slug": "textile-museum",
+    "title": "Textile Museum of Canada",
+    "category": "Navigation Design",
+    "type": "Group Project",
+    "duration": "1 Month",
+    "summary": "Redesign focused on navigation and engagement for younger audiences via a modern virtual experience.",
+    "gallery": [
+      { "src": "assets/images/theatre-photo2.jpg", "alt": "Desktop wireframe", "span": 8 },
+      { "src": "assets/images/theatre-photo4.jpg", "alt": "Mobile wireframe", "span": 4 },
+      { "src": "assets/images/theatre-photo1.jpg", "alt": "Phone UI", "span": 3 },
+      { "src": "assets/images/theatre-photo3.jpg", "alt": "Phone UI", "span": 3 },
+      { "src": "assets/images/allegro-photo.jpg", "alt": "Desktop UI", "span": 6 }
+    ],
+    "problem": "How might we redesign the website for easy navigation and attract younger, diverse audiences?",
+    "goal": "Renovate IA and navigation with emphasis on engagement and interaction.",
+    "highlights": [
+      { "icon": "assets/images/ux research-icon.png", "text": "Clear information structure" },
+      { "icon": "assets/images/service design-icon.png", "text": "Virtual exhibition experience" },
+      { "icon": "assets/images/figma-logo.avif", "text": "Appeal to younger audiences" }
+    ]
+  },
+  {
+    "slug": "ops-portal",
+    "title": "Citizen Service Portal Redesign",
+    "category": "UX",
+    "type": "Internship",
+    "duration": "4 Months",
+    "summary": "Redesigning the OPS citizen service portal to streamline access and improve accessibility.",
+    "gallery": [
+      { "src": "assets/images/ops-mccss-logo.jpg", "alt": "OPS cover", "span": 8 },
+      { "src": "assets/images/ops-logo.jpeg", "alt": "OPS alt", "span": 4 }
+    ],
+    "problem": "Citizens faced fragmented entry points and inconsistent service patterns across touchpoints.",
+    "goal": "Unify navigation, create a task-first IA, and improve WCAG accessibility.",
+    "highlights": [
+      { "icon": "assets/images/ux research-icon.png", "text": "User interviews & journey mapping" },
+      { "icon": "assets/images/service design-icon.png", "text": "Service blueprint across channels" },
+      { "icon": "assets/images/Power-BI-Logo.png", "text": "Analytics-informed prioritization" }
+    ]
+  },
+  {
+    "slug": "gasroute",
+    "title": "GasRoute: A Mobile Application for Locating Nearby Gas Stations",
+    "category": "Mobile UX",
+    "type": "Course Project",
+    "duration": "3 Weeks",
+    "summary": "A location-aware app to quickly find nearby gas stations with pricing and route ETA.",
+    "gallery": [
+      { "src": "assets/images/Power-BI-Logo.png", "alt": "GasRoute cover", "span": 6 },
+      { "src": "assets/images/figma-logo.avif", "alt": "Figma flows", "span": 6 }
+    ],
+    "problem": "Drivers waste time comparing stations and detours without clear price and distance context.",
+    "goal": "Surface closest good-value stations and provide one-tap routing.",
+    "highlights": [
+      { "icon": "assets/images/ux research-icon.png", "text": "Contextual inquiry & scenarios" },
+      { "icon": "assets/images/service design-icon.png", "text": "Task-first navigation" },
+      { "icon": "assets/images/figma-logo.avif", "text": "Hi-fi prototype" }
+    ]
+  },
+  {
+    "slug": "uoft-library-nav",
+    "title": "UofT Library Indoor Navigation",
+    "category": "Navigation Design",
+    "type": "Research & Prototype",
+    "duration": "1 Month",
+    "summary": "Indoor wayfinding to locate books, rooms, and services across multi-floor libraries.",
+    "gallery": [
+      { "src": "assets/images/uoftmi-logo.png", "alt": "UofT cover", "span": 8 },
+      { "src": "assets/images/uoft-logo.png", "alt": "Maps", "span": 4 }
+    ],
+    "problem": "Users struggle to translate call numbers into locations, especially across floors.",
+    "goal": "Provide step-by-step indoor routes and shelf-level guidance.",
+    "highlights": [
+      { "icon": "assets/images/ux research-icon.png", "text": "Usability tests & flow mapping" },
+      { "icon": "assets/images/service design-icon.png", "text": "POIs & landmark-based cues" },
+      { "icon": "assets/images/python-logo.png", "text": "Prototype data pipeline" }
+    ]
+  },
+  {
+    "slug": "explrecho",
+    "title": "ExplrEcho: A Localized Travel Diary and Recommendation Platform",
+    "category": "Product Design",
+    "type": "Side Project",
+    "duration": "2 Months",
+    "summary": "Personalized travel logs that power local recommendations for similar explorers.",
+    "gallery": [
+      { "src": "assets/images/Gradient.png", "alt": "ExplrEcho cover", "span": 8 },
+      { "src": "assets/images/Miro-Icon.png", "alt": "Miro flows", "span": 4 }
+    ],
+    "problem": "Generic reviews miss personal context; travelers want relevant tips from similar profiles.",
+    "goal": "Turn rich trip diaries into actionable, local recommendations.",
+    "highlights": [
+      { "icon": "assets/images/ux research-icon.png", "text": "Persona-based curation" },
+      { "icon": "assets/images/service design-icon.png", "text": "Contribution → value loop" },
+      { "icon": "assets/images/data analysis-icon.png", "text": "Tagging & similarity" }
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/work.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main style="margin-top: 80px;">
+        <section class="work-hero position-relative">
+            <div class="gradient-bg"></div>
+            <div class="container position-relative z-3">
+                <a href="archive.html" class="text-muted d-inline-flex align-items-center mb-2" style="gap:8px; text-decoration:none;">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Back to Projects</span>
+                </a>
+                <h1 id="p-title" class="work-title"></h1>
+                <p id="p-summary" class="work-subtitle"></p>
+
+                <div class="work-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Category</div>
+                        <div id="p-category" class="meta-value"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Type</div>
+                        <div id="p-type" class="meta-value"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Duration</div>
+                        <div id="p-duration" class="meta-value"></div>
+                    </div>
+                </div>
+
+                <div class="work-gallery mt-3">
+                    <div id="p-gallery" class="gallery-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h3>Problem Statement</h3>
+                <p id="p-problem"></p>
+                <h3 class="mt-4">Goal</h3>
+                <p id="p-goal"></p>
+                <div id="p-highlights" class="icon-rows mt-4"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/project.js"></script>
+</body>
+</html>
+

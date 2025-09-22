@@ -346,7 +346,7 @@
 .three-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 上面两张平分 */
-  gap: 8px;
+  gap: 6px;
   max-width: 900px; /* 你可以自己调节 */
   margin: auto;
 }
@@ -366,7 +366,7 @@
 .theatre-2x2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 两列 */
-  gap: 8px;
+  gap: 6px;
   max-width: 800px;
   margin: auto;
 }
@@ -392,19 +392,12 @@
   display: none !important;
 }
 
-<<<<<<< HEAD
-
-.tooltip{
-    position: relative;
-}
-
-=======
 /* 确保tooltip显示在sticker上方 */
 .tooltip {
   text-align: center;
   transform: translateY(-10px) !important;
+  position: relative;
 }
->>>>>>> 5b79ba41687e7c5781ef7ebf4284b8ffc7d53553
 
 .tooltip-inner {
   background-color: #3e3e3e !important;
@@ -413,4 +406,20 @@
   font-size: 14px;
   max-width: 260px; /* 适合当说明框 */
 
+}
+
+/* Experience 图片组行内间距缩小（上方两行四图） */
+.experience-section .col-md-7 .row {
+  --bs-gutter-x: 0.5rem; /* 8px */
+  --bs-gutter-y: 0.5rem; /* 8px */
+}
+
+/* 缩小图一上下两行之间的间距（覆盖 .mb-3 默认 1rem） */
+.experience-section .col-md-7 .row.mb-3 {
+  margin-bottom: 0.375rem; /* 6px */
+}
+
+/* 拉开左文右图之间的横向间距 */
+.experience-section .row.align-items-top {
+  --bs-gutter-x: 2rem; /* 32px，可按需再调大 */
 }
