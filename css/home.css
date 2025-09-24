@@ -429,6 +429,34 @@ main {
     box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
+/* Coming Soon 状态 */
+.project-card.is-coming-soon {
+    position: relative;
+    pointer-events: none; /* 禁止点击 */
+}
+
+.project-card.is-coming-soon::after {
+    content: 'Coming soon';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: .04em;
+    padding: 6px 10px;
+    border-radius: 999px;
+}
+
+.project-card.is-coming-soon .screenshot-image {
+    filter: grayscale(0.2) brightness(0.8);
+}
+
+.project-card.is-coming-soon .project-card-title,
+.project-card.is-coming-soon .project-card-description {
+    opacity: 0.75;
+}
+
 /* 项目标签样式 */
 .project-tags .badge {
     font-size: 12px;

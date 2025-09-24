@@ -22,6 +22,7 @@ function initHomepageFeatures() {
     initButtonActions();
     initParallaxEffects();
     initDeviceAnimations();
+    initComingSoon();
 }
 
 // 项目交互功能
@@ -50,6 +51,29 @@ function initProjectInteractions() {
             // 可以在这里添加跳转到项目详情页的逻辑
             console.log('Project card clicked:', this.querySelector('.card-title').textContent);
         });
+    });
+}
+
+// 暂停项目入口：Coming soon
+function initComingSoon() {
+    const comingSoonCards = document.querySelectorAll('.project-card.is-coming-soon');
+    comingSoonCards.forEach(card => {
+        // 设置可访问性
+        card.setAttribute('aria-disabled', 'true');
+        card.setAttribute('tabindex', '-1');
+
+        // 阻止跳转
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }, true);
+
+        // 同时拦截内部CTA按钮
+        const cta = card.querySelector('.screenshot-cta');
+        if (cta) {
+            cta.setAttribute('aria-hidden', 'true');
+            cta.style.pointerEvents = 'none';
+        }
     });
 }
 
