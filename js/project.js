@@ -51,6 +51,97 @@
       card.appendChild(img); card.appendChild(p);
       highlights.appendChild(card);
     });
+
+    // 渲染详细内容
+    renderDetails(project);
+  }
+
+  function renderDetails(project) {
+    // Context 背景
+    if (project.context) {
+      document.getElementById('p-context').style.display = 'block';
+      document.getElementById('p-context-content').textContent = project.context;
+    }
+
+    // Why Redesign 重新设计原因
+    if (project.whyRedesign) {
+      document.getElementById('p-why-redesign').style.display = 'block';
+      document.getElementById('p-why-redesign-content').textContent = project.whyRedesign;
+    }
+
+    // Goals 目标
+    if (project.goals && Array.isArray(project.goals)) {
+      document.getElementById('p-goals').style.display = 'block';
+      const goalsList = document.getElementById('p-goals-list');
+      goalsList.innerHTML = '';
+      project.goals.forEach(goal => {
+        const li = document.createElement('li');
+        li.textContent = goal;
+        goalsList.appendChild(li);
+      });
+    }
+
+    // User Scenarios 用户场景
+    if (project.userScenarios && Array.isArray(project.userScenarios)) {
+      document.getElementById('p-user-scenarios').style.display = 'block';
+      const scenariosGrid = document.getElementById('p-scenarios-grid');
+      scenariosGrid.innerHTML = '';
+      project.userScenarios.forEach((scenario, index) => {
+        const card = document.createElement('div');
+        card.className = 'scenario-card';
+        card.innerHTML = `
+          <div class="scenario-header">
+            <div class="scenario-icon">${getPersonaIcon(scenario.persona)}</div>
+            <h4 class="scenario-title">${scenario.title}</h4>
+          </div>
+          <div class="scenario-content">
+            <blockquote class="scenario-quote">"${scenario.quote}"</blockquote>
+            <p class="scenario-solution"><strong>Explor helps:</strong> ${scenario.solution}</p>
+          </div>
+        `;
+        scenariosGrid.appendChild(card);
+      });
+    }
+
+    // Pain Points 痛点
+    if (project.painPoints && Array.isArray(project.painPoints)) {
+      document.getElementById('p-pain-points').style.display = 'block';
+      const painPointsList = document.getElementById('p-pain-points-list');
+      painPointsList.innerHTML = '';
+      project.painPoints.forEach(point => {
+        const li = document.createElement('li');
+        li.textContent = point;
+        painPointsList.appendChild(li);
+      });
+    }
+
+    // 原有详细内容
+    if (project.process) {
+      document.getElementById('p-process').style.display = 'block';
+      document.getElementById('p-process-content').innerHTML = `<p>${project.process}</p>`;
+    }
+
+    if (project.research) {
+      document.getElementById('p-research').style.display = 'block';
+      document.getElementById('p-research-content').innerHTML = `<p>${project.research}</p>`;
+    }
+
+    if (project.implementation) {
+      document.getElementById('p-implementation').style.display = 'block';
+      document.getElementById('p-implementation-content').innerHTML = `<p>${project.implementation}</p>`;
+    }
+
+    if (project.results) {
+      document.getElementById('p-results').style.display = 'block';
+      document.getElementById('p-results-content').innerHTML = `<p>${project.results}</p>`;
+    }
+  }
+
+  function getPersonaIcon(persona) {
+    if (persona.includes('Student')) return '🎓';
+    if (persona.includes('Business')) return '💼';
+    if (persona.includes('Cultural')) return '🌍';
+    return '👤';
   }
 
   async function init(){

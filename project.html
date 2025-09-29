@@ -48,11 +48,94 @@
 
         <section class="section">
             <div class="container">
+                <!-- Context 背景 -->
+                <div id="p-context" class="project-section mb-5" style="display: none;">
+                    <div class="section-header">
+                        <div class="section-icon context-icon">●</div>
+                        <h3 class="section-title">Context</h3>
+                    </div>
+                    <div class="section-content">
+                        <p id="p-context-content"></p>
+                    </div>
+                </div>
+
+                <!-- Why Redesign 重新设计原因 -->
+                <div id="p-why-redesign" class="project-section mb-5" style="display: none;">
+                    <div class="section-header">
+                        <div class="section-icon warning-icon">▲</div>
+                        <h3 class="section-title">Why Redesign Current Travel Platforms?</h3>
+                    </div>
+                    <div class="section-content">
+                        <p id="p-why-redesign-content"></p>
+                    </div>
+                </div>
+
+                <!-- Goals 目标 -->
+                <div id="p-goals" class="project-section mb-5" style="display: none;">
+                    <div class="section-header">
+                        <div class="section-icon goal-icon">🎯</div>
+                        <h3 class="section-title">Goals</h3>
+                    </div>
+                    <div class="section-content">
+                        <ul id="p-goals-list" class="goals-list"></ul>
+                    </div>
+                </div>
+
+                <!-- User Scenarios 用户场景 -->
+                <div id="p-user-scenarios" class="project-section mb-5" style="display: none;">
+                    <div class="section-header">
+                        <div class="section-icon process-icon">⚙</div>
+                        <h3 class="section-title">Empathize: User Scenarios</h3>
+                    </div>
+                    <div class="section-content">
+                        <p class="scenarios-intro">To better understand user needs, we outlined three representative scenarios that highlight common pain points in current travel recommendation experiences.</p>
+                        <div id="p-scenarios-grid" class="scenarios-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Pain Points 痛点 -->
+                <div id="p-pain-points" class="project-section mb-5" style="display: none;">
+                    <div class="section-header">
+                        <h3 class="section-title">Pain Points</h3>
+                    </div>
+                    <div class="section-content">
+                        <ul id="p-pain-points-list" class="pain-points-list"></ul>
+                    </div>
+                </div>
+
+                <!-- 原有内容保持 -->
                 <h3>Problem Statement</h3>
                 <p id="p-problem"></p>
                 <h3 class="mt-4">Goal</h3>
                 <p id="p-goal"></p>
                 <div id="p-highlights" class="icon-rows mt-4"></div>
+                
+                <!-- 详细内容区域 - 根据项目动态显示 -->
+                <div id="p-details" class="project-details mt-5">
+                    <!-- 设计过程 -->
+                    <div id="p-process" class="detail-section mb-5" style="display: none;">
+                        <h4 class="mb-3">Design Process</h4>
+                        <div id="p-process-content"></div>
+                    </div>
+                    
+                    <!-- 用户研究 -->
+                    <div id="p-research" class="detail-section mb-5" style="display: none;">
+                        <h4 class="mb-3">User Research</h4>
+                        <div id="p-research-content"></div>
+                    </div>
+                    
+                    <!-- 技术实现 -->
+                    <div id="p-implementation" class="detail-section mb-5" style="display: none;">
+                        <h4 class="mb-3">Implementation</h4>
+                        <div id="p-implementation-content"></div>
+                    </div>
+                    
+                    <!-- 结果与影响 -->
+                    <div id="p-results" class="detail-section mb-5" style="display: none;">
+                        <h4 class="mb-3">Results & Impact</h4>
+                        <div id="p-results-content"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

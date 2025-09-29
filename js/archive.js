@@ -10,7 +10,8 @@
     article.className = 'work-card span-4';
 
     const media = document.createElement('a');
-    media.href = `project.html?slug=${encodeURIComponent(p.slug)}`;
+    // 使用新的URL结构：project/slug/
+    media.href = `project/${encodeURIComponent(p.slug)}/`;
     media.className = 'work-card-media';
 
     const cover = (p.gallery && p.gallery[0]) ? p.gallery[0].src : 'assets/images/Gradient.png';
