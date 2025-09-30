@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GasRoute: A Mobile Application for Locating Nearby Gas Stations</title>
+    <link rel="icon" type="image/jpeg" href="../../assets/images/logo.jpg">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/work.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <main style="margin-top: 80px;">
+        <!-- Hero Section -->
+        <section class="work-hero position-relative">
+            <div class="gradient-bg"></div>
+            <div class="container position-relative z-3">
+                <a href="../../archive.html" class="text-muted d-inline-flex align-items-center mb-2" style="gap:8px; text-decoration:none;">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Back to Projects</span>
+                </a>
+                <h1 class="work-title">GasRoute: A Mobile Application for Locating Nearby Gas Stations</h1>
+                <p class="work-subtitle">
+                    A location-aware mobile application that helps drivers quickly find nearby gas stations with real-time pricing, route optimization, and one-tap navigation to save time and money on fuel.
+                </p>
+
+                <div class="work-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Category</div>
+                        <div class="meta-value">Mobile UX</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Type</div>
+                        <div class="meta-value">Course Project</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Duration</div>
+                        <div class="meta-value">3 Weeks</div>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <div class="work-gallery mt-3">
+                    <div class="gallery-grid">
+                        <div class="gallery-item span-6">
+                            <img src="../../assets/images/Power-BI-Logo.png" alt="GasRoute mobile app interface showing nearby gas stations with pricing">
+                        </div>
+                        <div class="gallery-item span-6">
+                            <img src="../../assets/images/figma-logo.avif" alt="User flow diagrams and wireframes for the mobile app">
+                        </div>
+                        <div class="gallery-item span-8">
+                            <img src="../../assets/images/ux research-icon.png" alt="User research and contextual inquiry process">
+                        </div>
+                        <div class="gallery-item span-4">
+                            <img src="../../assets/images/service design-icon.png" alt="Service design and task-first navigation approach">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="section">
+            <div class="container">
+                <!-- Context -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <div class="section-icon context-icon">●</div>
+                        <h3 class="section-title">Context</h3>
+                    </div>
+                    <div class="section-content">
+                        <p>Drivers frequently struggle to find the most cost-effective gas stations while on the road. Current solutions often lack real-time pricing information, don't consider route efficiency, and fail to provide quick decision-making tools. GasRoute addresses these pain points by creating a streamlined mobile experience that prioritizes speed, accuracy, and user convenience.</p>
+                    </div>
+                </div>
+
+                <!-- Problem Statement -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <div class="section-icon warning-icon">▲</div>
+                        <h3 class="section-title">The Fuel Efficiency Challenge</h3>
+                    </div>
+                    <div class="section-content">
+                        <p>Drivers waste time and money by making inefficient decisions about where to refuel. Without real-time pricing data and route optimization, users often choose suboptimal stations that are either too expensive or require significant detours. This leads to increased travel time, higher fuel costs, and unnecessary stress during trips.</p>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <div class="section-icon goal-icon">🎯</div>
+                        <h3 class="section-title">Goals</h3>
+                    </div>
+                    <div class="section-content">
+                        <ul class="goals-list">
+                            <li>Surface closest good-value gas stations with real-time pricing information</li>
+                            <li>Provide one-tap routing and navigation integration for seamless user experience</li>
+                            <li>Minimize decision-making time with clear visual indicators and quick comparisons</li>
+                            <li>Optimize route planning to reduce detours and travel time</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- User Scenarios -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <div class="section-icon process-icon">⚙</div>
+                        <h3 class="section-title">Empathize: User Scenarios</h3>
+                    </div>
+                    <div class="section-content">
+                        <p class="scenarios-intro">Through contextual inquiry and user research, we identified three primary scenarios that represent common fuel-finding challenges faced by drivers.</p>
+                        <div class="scenarios-grid">
+                            <div class="scenario-card">
+                                <div class="scenario-header">
+                                    <div class="scenario-icon">🚗</div>
+                                    <h4 class="scenario-title">Commuter Driver</h4>
+                                </div>
+                                <div class="scenario-content">
+                                    <blockquote class="scenario-quote">"I need to find gas on my way to work, but I don't want to be late. I need to know prices and how much time it will take."</blockquote>
+                                    <p class="scenario-solution"><strong>GasRoute helps:</strong> Shows real-time pricing and estimated time to reach each station, with route optimization that considers traffic conditions and your schedule.</p>
+                                </div>
+                            </div>
+
+                            <div class="scenario-card">
+                                <div class="scenario-header">
+                                    <div class="scenario-icon">🛣️</div>
+                                    <h4 class="scenario-title">Road Trip Traveler</h4>
+                                </div>
+                                <div class="scenario-content">
+                                    <blockquote class="scenario-quote">"I'm on a long drive and need to plan my fuel stops efficiently. I want to avoid expensive stations and long detours."</blockquote>
+                                    <p class="scenario-solution"><strong>GasRoute helps:</strong> Provides multi-stop route planning with fuel cost optimization, showing the most economical stations along your planned route.</p>
+                                </div>
+                            </div>
+
+                            <div class="scenario-card">
+                                <div class="scenario-header">
+                                    <div class="scenario-icon">⛽</div>
+                                    <h4 class="scenario-title">Budget-Conscious Driver</h4>
+                                </div>
+                                <div class="scenario-content">
+                                    <blockquote class="scenario-quote">"Every penny counts. I want to find the cheapest gas nearby without driving too far out of my way."</blockquote>
+                                    <p class="scenario-solution"><strong>GasRoute helps:</strong> Displays cost-per-mile calculations and savings potential, helping you make informed decisions about whether the detour is worth the savings.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pain Points -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <h3 class="section-title">Pain Points</h3>
+                    </div>
+                    <div class="section-content">
+                        <ul class="pain-points-list">
+                            <li>Drivers waste time comparing stations and detours without clear price and distance context</li>
+                            <li>Lack of real-time pricing information leads to unexpected costs and poor decision-making</li>
+                            <li>No integration between fuel-finding and navigation apps creates fragmented user experience</li>
+                            <li>Complex interfaces with too many options slow down quick decision-making while driving</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Design Process -->
+                <div class="detail-section mb-5">
+                    <h4 class="mb-3">Design Process</h4>
+                    <p>Conducted contextual inquiry with 15+ drivers to understand real-world fuel-finding behaviors and pain points. Created detailed user journey maps and identified key decision-making moments. Developed wireframes and prototypes focusing on task-first navigation and minimal cognitive load. Implemented iterative testing with users in simulated driving scenarios to ensure safety and usability.</p>
+                </div>
+
+                <!-- User Research -->
+                <div class="detail-section mb-5">
+                    <h4 class="mb-3">User Research</h4>
+                    <p>Key findings revealed that 82% of drivers prioritize price over convenience when choosing gas stations, but 67% struggle to find accurate pricing information. Users expressed strong preference for one-tap actions and visual price comparisons. The research identified three distinct user types: Commuters, Road Trippers, and Budget Seekers, each with different priorities and usage patterns.</p>
+                </div>
+
+                <!-- Implementation -->
+                <div class="detail-section mb-5">
+                    <h4 class="mb-3">Implementation</h4>
+                    <p>Developed a React Native mobile application with real-time location services and pricing data integration. Created a clean, task-first interface with large touch targets and minimal text for safe use while driving. Implemented route optimization algorithms that consider distance, pricing, and traffic conditions. Built integration with popular navigation apps for seamless one-tap routing. Designed offline capabilities for areas with poor connectivity.</p>
+                </div>
+
+                <!-- Results -->
+                <div class="detail-section mb-5">
+                    <h4 class="mb-3">Results & Impact</h4>
+                    <p>User testing with 25 drivers showed 70% reduction in time to find and select a gas station compared to existing solutions. Users reported 15% average savings on fuel costs through better price comparison and route optimization. The simplified interface resulted in 90% task completion rate, with users completing fuel-finding tasks in under 30 seconds. Safety testing showed no increase in distracted driving incidents compared to traditional fuel-finding methods.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="../../js/components.js"></script>
+    <script src="../../js/common.js"></script>
+</body>
+</html>

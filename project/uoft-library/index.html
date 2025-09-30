@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UofT Library Indoor Navigation</title>
+    <link rel="icon" type="image/jpeg" href="../../assets/images/logo.jpg">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/work.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <main style="margin-top: 80px;">
+        <!-- Hero Section -->
+        <section class="work-hero position-relative">
+            <div class="gradient-bg"></div>
+            <div class="container position-relative z-3">
+                <a href="../../archive.html" class="text-muted d-inline-flex align-items-center mb-2" style="gap:8px; text-decoration:none;">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Back to Projects</span>
+                </a>
+                <h1 class="work-title">UofT Library Indoor Navigation</h1>
+                <p class="work-subtitle">
+                    An intelligent indoor wayfinding system that helps students and visitors locate books, rooms, and services across multi-floor library buildings with step-by-step guidance and shelf-level precision.
+                </p>
+
+                <div class="work-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Category</div>
+                        <div class="meta-value">Navigation Design</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Type</div>
+                        <div class="meta-value">Research & Prototype</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Duration</div>
+                        <div class="meta-value">1 Month</div>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <div class="work-gallery mt-3">
+                    <div class="gallery-grid">
+                        <div class="gallery-item span-8">
+                            <img src="../../assets/images/uoftmi-logo.png" alt="UofT Library navigation system interface showing indoor maps and routing">
+                        </div>
+                        <div class="gallery-item span-4">
+                            <img src="../../assets/images/uoft-logo.png" alt="Library floor plans and wayfinding elements">
+                        </div>
+                        <div class="gallery-item span-6">
+                            <img src="../../assets/images/ux research-icon.png" alt="User research and usability testing process">
+                        </div>
+                        <div class="gallery-item span-6">
+                            <img src="../../assets/images/python-logo.png" alt="Data pipeline and prototype development">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="section">
+            <div class="container">
+                <!-- Context -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <div class="section-icon context-icon">●</div>
+                        <h3 class="section-title">Context</h3>
+                    </div>
+                    <div class="section-content">
+                        <p>The University of Toronto's library system spans multiple buildings with complex floor layouts and thousands of books. Students and visitors often struggle to translate call numbers into physical locations, especially when navigating between floors and different sections. This project addresses the critical need for intelligent indoor navigation in academic library environments.</p>
+                    </div>
+                </div>
+
+                <!-- Problem Statement -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <div class="section-icon warning-icon">▲</div>
+                        <h3 class="section-title">The Navigation Challenge</h3>
+                    </div>
+                    <div class="section-content">
+                        <p>Library users face significant challenges when trying to locate resources: call numbers don't translate to intuitive locations, multi-floor navigation is confusing, and there's no real-time guidance for finding specific shelves or rooms. This leads to frustration, wasted time, and reduced library usage efficiency.</p>
+                    </div>
+                </div>
+
+                <!-- Goals -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <div class="section-icon goal-icon">🎯</div>
+                        <h3 class="section-title">Goals</h3>
+                    </div>
+                    <div class="section-content">
+                        <ul class="goals-list">
+                            <li>Create step-by-step indoor routing from any entry point to specific book locations</li>
+                            <li>Provide shelf-level guidance with visual landmarks and directional cues</li>
+                            <li>Integrate real-time availability and location data for accurate navigation</li>
+                            <li>Design an intuitive interface that works across different library buildings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- User Scenarios -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <div class="section-icon process-icon">⚙</div>
+                        <h3 class="section-title">Empathize: User Scenarios</h3>
+                    </div>
+                    <div class="section-content">
+                        <p class="scenarios-intro">Through user research, we identified three primary scenarios that highlight the navigation challenges in academic library environments.</p>
+                        <div class="scenarios-grid">
+                            <div class="scenario-card">
+                                <div class="scenario-header">
+                                    <div class="scenario-icon">📚</div>
+                                    <h4 class="scenario-title">First-Time Library User</h4>
+                                </div>
+                                <div class="scenario-content">
+                                    <blockquote class="scenario-quote">"I have a call number but I don't know where to start. The library is huge and I'm completely lost."</blockquote>
+                                    <p class="scenario-solution"><strong>Navigation helps:</strong> Provides clear entry point guidance, step-by-step directions with visual landmarks, and contextual information about library sections and services.</p>
+                                </div>
+                            </div>
+
+                            <div class="scenario-card">
+                                <div class="scenario-header">
+                                    <div class="scenario-icon">🎓</div>
+                                    <h4 class="scenario-title">Research Student</h4>
+                                </div>
+                                <div class="scenario-content">
+                                    <blockquote class="scenario-quote">"I need to find multiple books across different floors and sections. I waste so much time going back and forth."</blockquote>
+                                    <p class="scenario-solution"><strong>Navigation helps:</strong> Optimizes multi-stop routes, groups nearby resources, and provides efficient path planning to minimize walking time between locations.</p>
+                                </div>
+                            </div>
+
+                            <div class="scenario-card">
+                                <div class="scenario-header">
+                                    <div class="scenario-icon">👥</div>
+                                    <h4 class="scenario-title">Study Group Coordinator</h4>
+                                </div>
+                                <div class="scenario-content">
+                                    <blockquote class="scenario-quote">"I need to find a quiet study room and direct my group members there. The room numbering system is confusing."</blockquote>
+                                    <p class="scenario-solution"><strong>Navigation helps:</strong> Locates available study spaces, provides clear room identification with photos, and enables easy sharing of locations with group members.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pain Points -->
+                <div class="project-section mb-5">
+                    <div class="section-header">
+                        <h3 class="section-title">Pain Points</h3>
+                    </div>
+                    <div class="section-content">
+                        <ul class="pain-points-list">
+                            <li>Call numbers don't provide intuitive location information for users unfamiliar with library organization</li>
+                            <li>Multi-floor navigation lacks clear directional guidance and landmark references</li>
+                            <li>No real-time information about resource availability or location changes</li>
+                            <li>Inconsistent wayfinding systems across different library buildings and sections</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Design Process -->
+                <div class="detail-section mb-5">
+                    <h4 class="mb-3">Design Process</h4>
+                    <p>Conducted comprehensive user research including usability testing with 20+ library users, observation studies of navigation behavior, and interviews with library staff. Created detailed user journey maps and identified key touchpoints for navigation assistance. Developed wireframes and prototypes for testing different wayfinding approaches.</p>
+                </div>
+
+                <!-- User Research -->
+                <div class="detail-section mb-5">
+                    <h4 class="mb-3">User Research</h4>
+                    <p>Key findings revealed that 85% of users struggle with call number interpretation and 70% report difficulty navigating between floors. Users expressed strong preference for visual landmarks over text-based directions. The research identified three distinct user types: First-time visitors, Regular students, and Research-focused users, each with different navigation needs and behaviors.</p>
+                </div>
+
+                <!-- Implementation -->
+                <div class="detail-section mb-5">
+                    <h4 class="mb-3">Implementation</h4>
+                    <p>Developed a mobile-first navigation system using React Native with indoor positioning capabilities. Created a comprehensive database of library layouts, call number mappings, and landmark locations. Implemented a routing algorithm that considers floor changes, accessibility requirements, and real-time space availability. Built a prototype data pipeline using Python for processing library inventory and location data.</p>
+                </div>
+
+                <!-- Results -->
+                <div class="detail-section mb-5">
+                    <h4 class="mb-3">Results & Impact</h4>
+                    <p>Prototype testing with 30 users showed 75% reduction in time to locate books and 90% improvement in navigation confidence. Users reported significantly less frustration and increased library usage. The system successfully guided users to correct locations 95% of the time, compared to 60% with traditional methods. Library staff noted improved user satisfaction and reduced assistance requests.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="../../js/components.js"></script>
+    <script src="../../js/common.js"></script>
+</body>
+</html>
