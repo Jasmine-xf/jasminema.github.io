@@ -40,7 +40,7 @@ function fixNavigationPaths() {
             if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
                 // 为相对路径添加正确的上级目录
                 if (href === 'index.html' || href === 'about.html' || href === 'resume.html') {
-                    link.setAttribute('href', '../../' + href);
+                    link.setAttribute('href', '../../../' + href);
                 }
             }
         });
