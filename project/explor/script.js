@@ -30,32 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
 // 修复导航链接路径
 function fixNavigationPaths() {
     setTimeout(() => {
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
+        // 修复所有导航链接
+        const allLinks = document.querySelectorAll('a[href]');
+        allLinks.forEach(link => {
             const href = link.getAttribute('href');
-            if (href && !href.startsWith('http') && !href.startsWith('#')) {
+            if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
                 // 为相对路径添加正确的上级目录
-                if (href === 'index.html') {
-                    link.setAttribute('href', '../../index.html');
-                } else if (href === 'about.html') {
-                    link.setAttribute('href', '../../about.html');
-                } else if (href === 'resume.html') {
-                    link.setAttribute('href', '../../resume.html');
-                }
-            }
-        });
-        
-        // 修复footer中的链接
-        const footerLinks = document.querySelectorAll('footer a');
-        footerLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href && !href.startsWith('http') && !href.startsWith('#')) {
-                if (href === 'index.html') {
-                    link.setAttribute('href', '../../index.html');
-                } else if (href === 'about.html') {
-                    link.setAttribute('href', '../../about.html');
-                } else if (href === 'resume.html') {
-                    link.setAttribute('href', '../../resume.html');
+                if (href === 'index.html' || href === 'about.html' || href === 'resume.html') {
+                    link.setAttribute('href', '../../' + href);
                 }
             }
         });
