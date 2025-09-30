@@ -41,7 +41,7 @@ function fixNavigationPaths() {
                 }
             }
         });
-    }, 100); // 等待组件加载完成
+    }, 10); // 等待组件加载完成
 }
 
 // 滚动动画
@@ -115,14 +115,14 @@ function initPageLoadAnimations() {
     if (title) {
         const text = title.textContent;
         title.textContent = '';
-        title.style.borderRight = '2px solid #e91e63';
+        title.style.borderRight = '2px solid #ff9800';
         
         let i = 0;
         const typeWriter = () => {
             if (i < text.length) {
                 title.textContent += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeWriter, 50);
             } else {
                 title.style.borderRight = 'none';
             }

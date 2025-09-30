@@ -25,7 +25,7 @@
 
 /* 页面加载动画 */
 .project-section {
-    animation: fadeInUp 0.6s ease forwards;
+    animation: fadeInUp 0.2s ease forwards;
     opacity: 0;
 }
 
@@ -77,7 +77,7 @@
 .scenario-quote::before {
     content: '"';
     font-size: 48px;
-    color: #e91e63;
+    color: #ff9800;
     position: absolute;
     top: -10px;
     left: 10px;
@@ -94,7 +94,7 @@
 
 .goals-list li:hover {
     transform: translateX(8px);
-    color: #e91e63;
+    color: #ff9800;
 }
 
 .goals-list li::before {
@@ -104,7 +104,7 @@
     top: 0;
     width: 24px;
     height: 24px;
-    background: #e91e63;
+    background: #ff9800;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -149,9 +149,90 @@
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.05);
-    filter: brightness(1.1) contrast(1.1);
+/* Gallery图片内按钮样式 */
+.gallery-item-with-button {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item-with-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
+
+.gallery-item-with-button:hover::before {
+    opacity: 1;
+}
+
+.gallery-figma-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background: white;
+    color: #333;
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(40px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    min-width: 180px;
+    justify-content: center;
+}
+
+.gallery-item-with-button:hover .gallery-figma-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-figma-btn:hover {
+    background: #f8f9fa;
+    color: #333;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    padding: 18px 36px;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* 按钮图标样式 */
+.gallery-figma-btn i {
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.gallery-figma-btn:hover i {
+    transform: scale(1.1);
+}
+
+/* 按钮点击效果 */
+.gallery-figma-btn:active {
+    transform: translateY(-1px) scale(1.02);
+    transition: all 0.1s ease;
 }
 
 /* 响应式优化 */
@@ -170,6 +251,27 @@
         width: 20px;
         height: 20px;
         font-size: 10px;
+    }
+    
+    .gallery-item-with-button::before {
+        height: 120px;
+    }
+    
+    .gallery-figma-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 28px;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+    
+    .gallery-figma-btn:hover {
+        padding: 16px 32px;
+    }
+    
+    .gallery-figma-btn i {
+        font-size: 1.1rem;
+        margin-right: 6px;
     }
 }
 
