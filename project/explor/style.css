@@ -292,6 +292,59 @@
     line-height: 1.6;
 }
 
+/* Hero引用部分 */
+.hero-quote-section {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+/* 引用样式 */
+.quote-container {
+    position: relative;
+    padding: 2rem 3rem;
+    text-align: center;
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid #ffc107;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+}
+
+.quote-mark {
+    position: absolute;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffc107;
+    font-family: Georgia, serif;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+.quote-mark-left {
+    top: -0.5rem;
+    left: 1rem;
+}
+
+.quote-mark-right {
+    bottom: -1rem;
+    right: 1rem;
+    transform: rotate(180deg);
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
 /* 响应式优化 */
 @media (max-width: 768px) {
     .scenario-card {
@@ -355,6 +408,38 @@
     
     .value-content {
         font-size: 0.9rem;
+    }
+    
+    .quote-container {
+        padding: 1.2rem 1.5rem;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .quote-mark {
+        font-size: 3.5rem;
+    }
+    
+    .quote-mark-left {
+        left: 0.3rem;
+        top: -0.3rem;
+    }
+    
+    .quote-mark-right {
+        right: 0.3rem;
+        bottom: -0.8rem;
+    }
+    
+    .quote-text {
+        font-size: 1.1rem;
+        text-align: center;
+        width: 100%;
+        line-height: 1.5;
+    }
+    
+    .hero-quote-section {
+        margin: 1.5rem 0;
+        width: 100%;
     }
 }
 
