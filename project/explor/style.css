@@ -177,8 +177,8 @@
     position: absolute;
     bottom: 25px;
     right: 25px;
-    background: white;
-    color: #333;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(51, 51, 51, 0.7);
     padding: 16px 32px;
     border-radius: 30px;
     font-weight: 700;
@@ -187,11 +187,11 @@
     text-transform: uppercase;
     letter-spacing: 0.8px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     z-index: 10;
-    opacity: 0;
-    transform: translateY(40px);
+    opacity: 0.3;
+    transform: translateY(0);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -203,17 +203,24 @@
 
 .gallery-item-with-button:hover .gallery-figma-btn {
     opacity: 1;
-    transform: translateY(0);
+    background: white;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
-.gallery-figma-btn:hover {
-    background: #f8f9fa;
+.gallery-figma-btn:hover,
+.gallery-figma-btn:focus {
+    background: white;
     color: #333;
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     text-decoration: none;
     padding: 18px 36px;
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.2);
+    outline: 3px solid #ffc107;
+    outline-offset: 3px;
 }
 
 
@@ -459,9 +466,11 @@
         padding: 14px 28px;
         font-size: 1rem;
         min-width: 160px;
+        opacity: 0.4;
     }
     
-    .gallery-figma-btn:hover {
+    .gallery-figma-btn:hover,
+    .gallery-figma-btn:focus {
         padding: 16px 32px;
     }
     
