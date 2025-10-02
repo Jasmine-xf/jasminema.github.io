@@ -149,6 +149,23 @@
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* Design Decisions 图片无动画 */
+.section-content-left .gallery-item img {
+    transition: none;
+}
+
+/* User Reflection 图片宽度限制 */
+.section-content-right .gallery-item img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+
+
 /* Gallery图片内按钮样式 */
 .gallery-item-with-button {
     position: relative;
@@ -240,6 +257,11 @@
 .gallery-figma-btn:active {
     transform: translateY(-1px) scale(1.02);
     transition: all 0.1s ease;
+}
+
+/* 字体设置 */
+h1, h2, h3, h4, h5, h6, p {
+    font-family: "Figtree", "Figtree Placeholder", sans-serif;
 }
 
 /* 新的左右布局样式 */
