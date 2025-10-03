@@ -34,12 +34,7 @@ function fixNavigationPaths() {
         const allLinks = document.querySelectorAll('a[href]');
         allLinks.forEach(link => {
             const href = link.getAttribute('href');
-            if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
-                // 为相对路径添加正确的上级目录
-                if (href === 'index.html' || href === 'about.html' || href === 'resume.html') {
-                    link.setAttribute('href', '../../../' + href);
-                }
-            }
+            
         });
     }, 10); // 等待组件加载完成
 }
