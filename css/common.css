@@ -18,7 +18,7 @@
 
 
 /* 全站字体样式 */
-body, h1, h2, h3, h4, h5, h6, p {
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
     font-family: "Figtree", "Figtree Placeholder", sans-serif;
 }
 
@@ -33,29 +33,31 @@ body, h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 0 !important;
 }
 h2 {
-    font-size: 1.75rem !important;
+    font-size: 1.5rem !important;
 }
 h3 {
     font-size: 1.25rem !important;
+    font-weight: 700 !important;
+
 }
 
 
 p{
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
     font-weight: 400;
     text-align: justify;
 }
 
 ul,ol{
    
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
 }
 
 li {
     line-height: 1.4;
     margin-bottom: 1rem;
 
-    font-size: 1.25rem !important;
+    font-size: 1 rem !important;
     font-weight: 400;
 }
 

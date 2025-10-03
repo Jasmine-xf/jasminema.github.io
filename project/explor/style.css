@@ -283,7 +283,7 @@ h1, h2, h3, h4, h5, h6, p {
 .section-content-right {
     font-size: 1rem;
     line-height: 1.7;
-    color: #555;
+
 }
 
 .section-content-right p {
@@ -605,4 +605,30 @@ h1, h2, h3, h4, h5, h6, p {
 .scroll-animate.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* 视频播放器样式 */
+video {
+    max-width: 100%;
+    height: auto;
+ 
+    background: transparent;
+    object-fit: contain;
+}
+
+/* 去除视频黑色背景 */
+video::-webkit-media-controls {
+    background: transparent;
+}
+
+video::-webkit-media-controls-panel {
+    background: transparent;
+}
+
+/* 响应式视频样式 */
+@media (max-width: 768px) {
+    video {
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
 }
