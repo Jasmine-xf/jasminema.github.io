@@ -18,12 +18,12 @@
 }
 
 .work-subtitle {
-    font-size: 16px;
-    /* color: rgba(0, 0, 0, 0.6); */
-    font-weight: 600;
+    font-size: 1.25 rem;    /* color: rgba(0, 0, 0, 0.6); */
+    font-weight: 400;
 
 
 }
+
 
 .work-meta {
     display: grid;
@@ -98,6 +98,7 @@
 
 @media (max-width: 480px) {
     .work-title { font-size: 26px; }
+    .work-meta { grid-template-columns: 1fr; gap: 8px; }
     .gallery-grid { grid-template-columns: repeat(4, 1fr); }
     .span-8, .span-6, .span-4, .span-3 { grid-column: span 4; }
     .icon-rows { grid-template-columns: 1fr; }

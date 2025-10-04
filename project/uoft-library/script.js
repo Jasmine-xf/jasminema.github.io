@@ -148,49 +148,6 @@ function initPageLoadAnimations() {
     });
 }
 
-// 初始化导航演示
-function initNavigationDemo() {
-    // 创建导航演示元素
-    const demoContainer = document.createElement('div');
-    demoContainer.className = 'navigation-demo mt-4';
-    demoContainer.innerHTML = `
-        <div class="demo-section">
-            <h5>Navigation Demo</h5>
-            <div class="demo-controls">
-                <button class="btn btn-outline-primary btn-sm" onclick="startNavigationDemo()">
-                    <i class="bi bi-play-circle"></i> Start Demo
-                </button>
-                <button class="btn btn-outline-secondary btn-sm" onclick="resetNavigationDemo()">
-                    <i class="bi bi-arrow-clockwise"></i> Reset
-                </button>
-            </div>
-            <div class="demo-path mt-3" id="demo-path" style="display: none;">
-                <div class="path-step">
-                    <span class="step-number">1</span>
-                    <span class="step-text">Enter library from main entrance</span>
-                </div>
-                <div class="path-step">
-                    <span class="step-number">2</span>
-                    <span class="step-text">Take elevator to 3rd floor</span>
-                </div>
-                <div class="path-step">
-                    <span class="step-number">3</span>
-                    <span class="step-text">Turn right at reference desk</span>
-                </div>
-                <div class="path-step">
-                    <span class="step-number">4</span>
-                    <span class="step-text">Find shelf QH 301-350</span>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // 将演示添加到第一个项目部分
-    const firstSection = document.querySelector('.project-section');
-    if (firstSection) {
-        firstSection.appendChild(demoContainer);
-    }
-}
 
 // 开始导航演示
 function startNavigationDemo() {
@@ -376,3 +333,38 @@ const demoStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = demoStyles;
 document.head.appendChild(styleSheet);
+
+// 初始化 Swiper 轮播
+function initSwiper() {
+    const swiper = new Swiper('.stages-swiper', {
+        slidesPerView: 4.5,
+        spaceBetween: 24,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 16
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 24
+            },
+            1200: {
+                slidesPerView: 4.5,
+                spaceBetween: 24
+            }
+        }
+    });
+}
+
+// 页面加载完成后初始化 Swiper
+document.addEventListener('DOMContentLoaded', function() {
+    initSwiper();
+});
