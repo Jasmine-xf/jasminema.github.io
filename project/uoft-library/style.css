@@ -700,29 +700,20 @@ video::-webkit-media-controls-panel {
     transform: scale(1.2);
 }
 
-/* 可点击放大图片样式 */
-.clickable-image-container {
-    position: relative;
-    margin: 1.5rem 0;
-}
-
-.image-wrapper {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    max-width: 100%;
-}
 
 
-.clickable-image {
+/* 画廊图片样式 */
+.gallery-item img {
     width: 100%;
-    height: auto
+    height: auto;
     display: block;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    max-width: 600px;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 
@@ -789,5 +780,8 @@ video::-webkit-media-controls-panel {
         height: 12px;
     }
     
-    
+    .gallery-item img {
+        max-width: 100%;
+        max-height: 300px;
+    }
 }
