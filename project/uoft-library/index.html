@@ -70,7 +70,7 @@
            
         </div>
     </section>
-    <section class="section py-5 bg-grey">
+    <section class="section py-5 bg-grey ">
         <div class="project-section mb-5 container p-0">
             <div class="">
                 
@@ -79,7 +79,7 @@
                     
                     <!-- Swiper Carousel -->
                     <div class="swiper-container stages-swiper">
-                        <div class="swiper-wrapper">
+                        <div class="swiper-wrapper container">
                             <div class="swiper-slide">
                                 <div class="stage-card">
                                     <div class="stage-number">01</div>
@@ -193,30 +193,56 @@
                 <div class="project-section mb-5">
                     <div class="section-layout">
                         <div class="section-title-left ">
-                            <h2>Desk & Secondary Research</h2>
+                            <h2>Desk Research</h2>
                            
                         </div>
                         <div class="section-content-right">
                             <div class="value-proposition-list">
                                 <div class="value-item">
-                                    <p>From my analysis of library navigation challenges, I identified gaps in wayfinding, real-time guidance, and user experience — leading to the following value propositions:</p>
-                                    <h4 class="value-title">1.Step-by-Step Indoor Routing</h4>
-                                    <p class="value-content">Unlike traditional library maps that require users to interpret complex layouts, the navigation system provides clear, step-by-step directions from any entry point to specific book locations, eliminating confusion and reducing search time.</p>
+                                    <p>To understand how people navigate complex indoor spaces and what challenges they face, our team conducted desk research as part of collaborative project with Mobile Application Development Lab (MADLab) at the University of Toronto</p>
+                                    <p>The goal was to determine what practices work well, what challenges remain unsolved, and how these insights could inform the design direction for UofT's indoor navigation system.</p>
                                 </div>
-                                <div class="value-item">
-                                    <h4 class="value-title">2. Shelf-Level Precision</h4>
-                                    <p class="value-content">The system provides precise guidance to specific shelves and book locations, using visual landmarks and directional cues to help users navigate complex multi-floor library buildings with confidence.</p>
+                                <div class="value-item pb-4">
+                                    <h3 class="value-title pb-2">How We gonna do that?</h3>
+                                    <ul>
+                                        <li>Reviewed 10+ reports and navigation tools to examine common usability and accessibility issues.</li>
+
+                                        <li>Compared how different systems approach real-time positioning, visual cues, and accessibility features.</li> 
+                                            
+                                        <li>Mapped out key opportunities that informed our primary research plan and guided later design decisions.</li>
+                                    </ul>
+                                    <h3>Key Findings</h3>
+                                    <ul>
+                                        <li>
+                                            <strong>3D/AR navigation and real-time tracking are industry standards</strong>, but few solutions integrate accessibility features such as screen readers, high-contrast modes, or barrier-free routes.
+                                            <br>→ There's a gap in inclusive indoor navigation design.
+                                        </li>
+                                        <li>
+                                            <strong>Information about indoor spaces is fragmented and static.</strong> Most tools rely on outdated floor maps or scattered signage, which causes confusion and inconsistency across buildings.
+                                            <br>→ There's a need for a centralized, real-time navigation system that updates continuously.
+                                        </li>
+                                        <li>
+                                            <strong>User confidence and independence are limited.</strong> Research shows that many people—especially newcomers and those with accessibility needs—depend on asking others for directions.
+                                            <br>→ There's an opportunity to build an experience that supports independent navigation through clearer visual and contextual cues.
+                                        </li>
+                                        <li>
+                                            <strong>Offline and multi-language functions are underdeveloped.</strong> Few systems support use without internet access or offer multilingual interfaces.
+                                            <br>→ There's potential for offline usability and language inclusivity in UofT's campus environment.
+                                        </li>
+                                    </ul>
+                                    
+                                    <!-- Clickable Image Section -->
+                                    <div class="clickable-image-container mt-4">
+                                        <div class="image-wrapper">
+                                            <img src="../../assets/images/indoor/MADLab SWOT Analysis.png" alt="Research findings visualization showing key insights from desk research" class="clickable-image" onclick="openImageModal(this)">
+                                        </div>
+                                        <p class="image-caption text-muted mt-2">Click to view full size</p>
+                                    </div>
                                 </div>
-                                <div class="value-item">
-                                    <h4 class="value-title">3. Real-Time Data Integration</h4>
-                                    <p class="value-content">Integration with library inventory systems provides real-time availability and location data, ensuring users receive accurate navigation information and avoid wasted trips to unavailable resources.</p>
-                                </div>
-                                <div class="value-item">
-                                    <h4 class="value-title">4. Universal Interface Design</h4>
-                                    <p class="value-content">An intuitive, consistent interface works across different library buildings and sections, reducing the learning curve and providing a familiar experience regardless of location.</p>
-                                </div>
+                               
                             </div>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -369,6 +395,17 @@
 
     <!-- Footer -->
     <div id="footer-container"></div>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true" data-bs-backdrop="true" data-bs-keyboard="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0">
+                    <img id="modalImage" src="" alt="Enlarged image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

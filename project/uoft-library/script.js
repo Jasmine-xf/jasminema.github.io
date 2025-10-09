@@ -109,6 +109,170 @@ function initInteractiveEffects() {
             createImageModal(this.src, this.alt);
         });
     });
+
+}
+
+// 打开图片模态框（支持缩放和拖拽）
+function openImageModal(imgElement) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    if (modal && modalImage && typeof bootstrap !== 'undefined') {
+        modalImage.src = imgElement.src;
+        modalImage.alt = imgElement.alt;
+        
+        // 重置图片状态
+        modalImage.classList.remove('zoomed');
+        modalImage.style.transform = 'scale(1) translate(0, 0)';
+        
+        // 显示模态框
+        const bsModal = new bootstrap.Modal(modal, {
+            backdrop: true,
+            keyboard: true
+        });
+        bsModal.show();
+        
+        // 添加图片交互功能
+        initImageZoom(modalImage);
+    }
+}
+
+// 初始化图片缩放和拖拽功能
+function initImageZoom(img) {
+    let isDragging = false;
+    let startX, startY, translateX = 0, translateY = 0;
+    let scale = 1;
+    let isZoomed = false;
+    
+    // 鼠标滚轮缩放
+    img.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        
+        const delta = e.deltaY > 0 ? -0.1 : 0.1;
+        scale = Math.max(0.5, Math.min(3, scale + delta));
+        
+        if (scale > 1) {
+            img.classList.add('zoomed');
+            isZoomed = true;
+        } else {
+            img.classList.remove('zoomed');
+            isZoomed = false;
+            translateX = 0;
+            translateY = 0;
+        }
+        
+        img.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+    });
+    
+    // 鼠标拖拽
+    img.addEventListener('mousedown', function(e) {
+        if (isZoomed) {
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            img.style.cursor = 'grabbing';
+        }
+    });
+    
+    img.addEventListener('mousemove', function(e) {
+        if (isDragging && isZoomed) {
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            img.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+        }
+    });
+    
+    img.addEventListener('mouseup', function() {
+        isDragging = false;
+        if (isZoomed) {
+            img.style.cursor = 'grab';
+        }
+    });
+    
+    img.addEventListener('mouseleave', function() {
+        isDragging = false;
+        if (isZoomed) {
+            img.style.cursor = 'grab';
+        }
+    });
+    
+    // 双击重置
+    img.addEventListener('dblclick', function() {
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        img.classList.remove('zoomed');
+        img.style.transform = 'scale(1) translate(0, 0)';
+        img.style.cursor = 'grab';
+        isZoomed = false;
+    });
+    
+    // 触摸设备支持
+    let lastTouchDistance = 0;
+    
+    img.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 2) {
+            // 双指缩放
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            lastTouchDistance = Math.sqrt(
+                Math.pow(touch2.clientX - touch1.clientX, 2) +
+                Math.pow(touch2.clientY - touch1.clientY, 2)
+            );
+        } else if (e.touches.length === 1 && isZoomed) {
+            // 单指拖拽
+            isDragging = true;
+            const touch = e.touches[0];
+            startX = touch.clientX - translateX;
+            startY = touch.clientY - translateY;
+        }
+    });
+    
+    img.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        
+        if (e.touches.length === 2) {
+            // 双指缩放
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const currentDistance = Math.sqrt(
+                Math.pow(touch2.clientX - touch1.clientX, 2) +
+                Math.pow(touch2.clientY - touch1.clientY, 2)
+            );
+            
+            if (lastTouchDistance > 0) {
+                const delta = (currentDistance - lastTouchDistance) * 0.01;
+                scale = Math.max(0.5, Math.min(3, scale + delta));
+                
+                if (scale > 1) {
+                    img.classList.add('zoomed');
+                    isZoomed = true;
+                } else {
+                    img.classList.remove('zoomed');
+                    isZoomed = false;
+                    translateX = 0;
+                    translateY = 0;
+                }
+                
+                img.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+            }
+            
+            lastTouchDistance = currentDistance;
+        } else if (e.touches.length === 1 && isDragging && isZoomed) {
+            // 单指拖拽
+            const touch = e.touches[0];
+            translateX = touch.clientX - startX;
+            translateY = touch.clientY - startY;
+            img.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+        }
+    });
+    
+    img.addEventListener('touchend', function(e) {
+        isDragging = false;
+        if (e.touches.length === 0) {
+            lastTouchDistance = 0;
+        }
+    });
 }
 
 // 页面加载动画
@@ -194,7 +358,8 @@ function resetNavigationDemo() {
     }
 }
 
-// 创建图片模态框
+
+// 创建图片模态框（备用方法）
 function createImageModal(src, alt) {
     const modal = document.createElement('div');
     modal.className = 'image-modal';
