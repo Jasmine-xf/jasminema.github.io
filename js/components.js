@@ -14,6 +14,8 @@ class ComponentLoader {
     constructor() {
         // 存储加载的组件内容
         this.components = {};
+        // 标记是否使用了备用组件
+        this.isFallbackMode = false;
         // 初始化组件加载器
         this.init();
     }
@@ -44,8 +46,21 @@ class ComponentLoader {
             this.components.footer = await footerResponse.text();
         } catch (error) {
             console.error('组件加载失败:', error);
+            this.isFallbackMode = true;
             this.loadFallbackComponents(); // 使用备用组件
         }
+    }
+
+    /**
+     * ===== 获取基础路径方法 =====
+     * 根据当前页面位置确定正确的相对路径前缀
+     */
+    getBasePath() {
+        const path = window.location.pathname;
+        if (path.includes('/project/')) {
+            return '../../'; // 项目页面需要回到根目录
+        }
+        return ''; // 根目录页面不需要前缀
     }
 
     /**
@@ -54,47 +69,50 @@ class ComponentLoader {
      * 确保网站始终能正常显示导航和页脚
      */
     loadFallbackComponents() {
+        const basePath = this.getBasePath();
         // 备用组件：当fetch失败时使用
         this.components.header = `
             <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
                 <div class="container">
-                    <div class="navbar-brand d-flex align-items-center">
-                        <div class="avatar me-3"></div>
-                        <span class="fw-bold">Portfolio</span>
-                    </div>
+                    <a href="${basePath}index.html" class="navbar-brand d-flex align-items-center text-decoration-none">
+                        <img src="${basePath}assets/images/logo.png" alt="Jasmine Ma Logo" style="width: 40px; height: 40px; object-fit: contain;">
+                        <span class="fw-bold text-dark d-none d-md-inline">Jasmine Ma</span>
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link fw-medium" href="index.html" data-page="home">
+                                <a class="nav-link fw-medium" href="${basePath}index.html" data-page="home">
                                     Work
                                     <div class="nav-highlighter"></div>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-medium" href="about.html" data-page="about">
+                                <a class="nav-link fw-medium" href="${basePath}about.html" data-page="about">
                                     About
                                     <div class="nav-highlighter"></div>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-medium" href="resume.html" data-page="resume">
+                                <a class="nav-link fw-medium" href="${basePath}resume.html" data-page="resume">
                                     Resume
                                     <div class="nav-highlighter"></div>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link fw-medium" href="#" data-page="experiments">
-                                    Experiments
-                                    <div class="nav-highlighter"></div>
-                                </a>
-                            </li>
                         </ul>
-                        <div class="navbar-nav">
-                            <a class="nav-link text-muted" href="#">
-                                <i class="bi bi-twitter me-1"></i>@Your_Twitter
+                        <div class="navbar-nav flex-row flex-nowrap align-items-center gap-3">
+                            <a class="nav-link text-muted p-0 d-flex align-items-center"
+                                href="https://www.linkedin.com/in/xuefei-ma-66aa26178/"
+                                aria-label="Find Jasmine on LinkedIn"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-linkedin" aria-hidden="true" style="font-size:30px; line-height:1;"></i>
+                            </a>
+                            <a class="nav-link text-muted p-0 d-flex align-items-center"
+                                href="mailto:jasminemacn@gmail.com"
+                                aria-label="Email Jasmine">
+                                <i class="bi bi-envelope-fill" aria-hidden="true" style="font-size:30px; line-height:1;"></i>
                             </a>
                         </div>
                     </div>
@@ -162,7 +180,14 @@ class ComponentLoader {
         // 渲染导航栏组件
         const headerContainer = document.getElementById('header-container');
         if (headerContainer) {
-            headerContainer.innerHTML = this.components.header;
+            let headerContent = this.components.header;
+            
+            // 如果不是备用组件，需要动态调整路径
+            if (!this.isFallbackMode) {
+                headerContent = this.adjustHeaderPaths(headerContent);
+            }
+            
+            headerContainer.innerHTML = headerContent;
         }
 
         // 渲染页脚组件
@@ -170,6 +195,39 @@ class ComponentLoader {
         if (footerContainer) {
             footerContainer.innerHTML = this.components.footer;
         }
+    }
+
+    /**
+     * ===== 调整Header路径方法 =====
+     * 动态调整外部加载的header组件中的路径
+     */
+    adjustHeaderPaths(headerContent) {
+        const basePath = this.getBasePath();
+        
+        // 替换logo链接
+        headerContent = headerContent.replace(
+            /href="index\.html"/g, 
+            `href="${basePath}index.html"`
+        );
+        
+        // 替换导航链接
+        headerContent = headerContent.replace(
+            /href="about\.html"/g, 
+            `href="${basePath}about.html"`
+        );
+        
+        headerContent = headerContent.replace(
+            /href="resume\.html"/g, 
+            `href="${basePath}resume.html"`
+        );
+        
+        // 替换logo图片路径
+        headerContent = headerContent.replace(
+            /src="assets\/images\/logo\.png"/g, 
+            `src="${basePath}assets/images/logo.png"`
+        );
+        
+        return headerContent;
     }
 
     /**
