@@ -967,3 +967,13 @@ video::-webkit-media-controls-panel {
         max-height: 300px;
     }
 }
+
+/* 简单列表样式 */
+.mb-4 li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.mb-4 li strong {
+    color: #002f65;
+}
