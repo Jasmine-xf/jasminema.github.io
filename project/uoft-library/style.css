@@ -1,5 +1,187 @@
 /* UofT Library项目专用样式 */
 
+/* Key Findings 简洁布局样式 */
+.finding-card {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.finding-icon-large {
+    width: 104px;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.finding-icon-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.finding-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+    text-align: center;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .finding-icon-large {
+        width: 91px;
+        height: 91px;
+    }
+    
+    .finding-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .finding-card {
+        margin-bottom: 1rem;
+    }
+    
+    .finding-icon-large {
+        width: 78px;
+        height: 78px;
+    }
+    
+    .finding-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 576px) {
+    .finding-icon-large {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* Persona Card Styles */
+.persona-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.persona-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.persona-details h5 {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.persona-details ul {
+    margin-bottom: 1.5rem;
+}
+
+.persona-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Wireframe Card Styles */
+.wireframe-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    height: 100%;
+}
+
+.wireframe-img {
+    max-width: 200px;
+    height: auto;
+    margin: 1rem 0;
+}
+
+.wireframe-caption {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 1rem;
+}
+
+/* Prototype Comparison Styles */
+.prototype-comparison {
+    margin-top: 2rem;
+}
+
+.comparison-wireframes {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comparison-img {
+    max-width: 150px;
+    height: auto;
+}
+
+.design-decisions {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.design-decisions p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Design Section Styles */
+.design-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .persona-card {
+        padding: 1.5rem;
+    }
+    
+    .persona-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .comparison-wireframes {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .wireframe-card {
+        padding: 1rem;
+    }
+}
+
 /* 自定义动画 */
 @keyframes fadeInUp {
     from {
