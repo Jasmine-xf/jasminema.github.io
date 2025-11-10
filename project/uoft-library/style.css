@@ -1,5 +1,10 @@
 /* UofT Library项目专用样式 */
 
+/* 全局图片最大宽度限制 */
+img {
+    max-width: 907px;
+}
+
 /* Key Findings 简洁布局样式 */
 .finding-card {
     padding: 1rem 0;
@@ -338,7 +343,7 @@
 
 /* User Reflection 图片宽度限制 */
 .section-content-right .gallery-item img {
-    max-width: 100%;
+    max-width: 907px;
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -890,7 +895,7 @@ video::-webkit-media-controls-panel {
     height: auto;
     display: block;
     transition: transform 0.3s ease, filter 0.3s ease;
-    max-width: 600px;
+    max-width: 907px;
     max-height: 400px;
     object-fit: contain;
     border-radius: 8px;
@@ -976,4 +981,24 @@ video::-webkit-media-controls-panel {
 
 .mb-4 li strong {
     color: #002f65;
+}
+
+/* Prototyping 部分图片样式 - 去除背景，靠左对齐 */
+.section-content-right .gallery-item {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    overflow: visible;
+    text-align: left;
+}
+
+.section-content-right .gallery-item img {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 907px;
+    width: auto;
+    display: block;
+    margin-left: 0;
+    margin-right: 10px;
 }
