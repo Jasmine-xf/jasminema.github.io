@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 初始化导航演示
     initNavigationDemo();
+
+    // 移除白色背景
+    initBackgroundRemoval();
 });
 
 // 修复导航链接路径
@@ -533,3 +536,50 @@ function initSwiper() {
 document.addEventListener('DOMContentLoaded', function() {
     initSwiper();
 });
+
+// 将白色背景转换为透明
+function initBackgroundRemoval() {
+    const targetImages = document.querySelectorAll('.gallery-item img[src*="indoor web low fi"]');
+    targetImages.forEach(img => {
+        if (img.dataset.bgProcessed === 'true') return;
+        const processImage = () => {
+            removeWhiteBackground(img);
+            img.dataset.bgProcessed = 'true';
+        };
+        if (img.complete && img.naturalWidth) {
+            processImage();
+        } else {
+            img.addEventListener('load', processImage, { once: true });
+        }
+    });
+}
+
+function removeWhiteBackground(imageElement) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d', { willReadFrequently: true });
+    const { naturalWidth, naturalHeight } = imageElement;
+
+    if (!naturalWidth || !naturalHeight) return;
+
+    canvas.width = naturalWidth;
+    canvas.height = naturalHeight;
+    context.drawImage(imageElement, 0, 0, naturalWidth, naturalHeight);
+
+    const imageData = context.getImageData(0, 0, naturalWidth, naturalHeight);
+    const { data } = imageData;
+    const tolerance = 240; // 阈值越低，保留的浅色越多
+
+    for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+
+        if (r > tolerance && g > tolerance && b > tolerance) {
+            data[i + 3] = 0;
+        }
+    }
+
+    context.putImageData(imageData, 0, 0);
+    imageElement.src = canvas.toDataURL('image/png');
+    imageElement.classList.add('bg-removed');
+}

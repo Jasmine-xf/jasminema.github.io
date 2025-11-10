@@ -1,0 +1,100 @@
+warning: in the working copy of 'project/uoft-library/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project/uoft-library/script.js', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/project/uoft-library/index.html b/project/uoft-library/index.html[m
+[1mindex 8455db9..56162cd 100644[m
+[1m--- a/project/uoft-library/index.html[m
+[1m+++ b/project/uoft-library/index.html[m
+[36m@@ -486,8 +486,15 @@[m
+                     </div>[m
+                     <div class="section-content-right">[m
+                         <p>Building on our research insights and To-Be Scenario, we designed wireframes to visualize a clear, accessible navigation flow.</p>[m
+[31m-                        <div class="gallery-item mb-4">[m
+[31m-                            <img src="../../assets/images/indoor/indoor wireframe.jpg" alt="ideation Analysis">[m
+[32m+[m[32m                        <div class="gallery-item mb-4" >[m
+[32m+[m[32m                            <img src="../../assets/images/indoor/indoor web low fi 1.png" alt="ideation Analysis">[m
+[32m+[m[32m                            <img src="../../assets/images/indoor/indoor web low fi 2.png" alt="ideation Analysis">[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                         <p>Since users may need to navigate in real time while holding their phones, we designed a mobile version in addition to the web version. Although both share the same overall design concept, the mobile version places greater emphasis on gesture interactions and aligns more closely with users’ mobile usage habits.</p>[m
+[32m+[m[41m                         [m
+[32m+[m[32m                         <div class="gallery-item mb-4" >[m
+[32m+[m[32m                         <img   src="../../assets/images/indoor/infoor mobile low fi 1.png" alt="ideation Analysis">[m
+[32m+[m[41m                  [m
+                          </div>[m
+                     </div>[m
+                 </div>[m
+[36m@@ -500,8 +507,8 @@[m
+             <div class="project-section mb-5 container">[m
+                 <div class="section-layout">[m
+                     <div class="section-title-left">[m
+[31m-                        <h2>06. Prototyping</h2>[m
+[31m-                        <p class="section-subtitle">Added iterative refinements to address user pain points</p>[m
+[32m+[m[32m                        <h2>Lean Evaluation</h2>[m
+[32m+[m[32m                        <p class="section-subtitle">To quickly validate the core “find–view–locate–navigate” user flow at low cost before moving into high-fi prototyping.</p>[m
+                     </div>[m
+                     <div class="section-content-right">[m
+                         <div class="prototype-section">[m
+[1mdiff --git a/project/uoft-library/script.js b/project/uoft-library/script.js[m
+[1mindex 5b1e850..c4623e5 100644[m
+[1m--- a/project/uoft-library/script.js[m
+[1m+++ b/project/uoft-library/script.js[m
+[36m@@ -28,6 +28,9 @@[m [mdocument.addEventListener('DOMContentLoaded', function() {[m
+     [m
+     // 初始化导航演示[m
+     initNavigationDemo();[m
+[32m+[m
+[32m+[m[32m    // 移除白色背景[m
+[32m+[m[32m    initBackgroundRemoval();[m
+ });[m
+ [m
+ // 修复导航链接路径[m
+[36m@@ -533,3 +536,50 @@[m [mfunction initSwiper() {[m
+ document.addEventListener('DOMContentLoaded', function() {[m
+     initSwiper();[m
+ });[m
+[32m+[m
+[32m+[m[32m// 将白色背景转换为透明[m
+[32m+[m[32mfunction initBackgroundRemoval() {[m
+[32m+[m[32m    const targetImages = document.querySelectorAll('.gallery-item img[src*="indoor web low fi"]');[m
+[32m+[m[32m    targetImages.forEach(img => {[m
+[32m+[m[32m        if (img.dataset.bgProcessed === 'true') return;[m
+[32m+[m[32m        const processImage = () => {[m
+[32m+[m[32m            removeWhiteBackground(img);[m
+[32m+[m[32m            img.dataset.bgProcessed = 'true';[m
+[32m+[m[32m        };[m
+[32m+[m[32m        if (img.complete && img.naturalWidth) {[m
+[32m+[m[32m            processImage();[m
+[32m+[m[32m        } else {[m
+[32m+[m[32m            img.addEventListener('load', processImage, { once: true });[m
+[32m+[m[32m        }[m
+[32m+[m[32m    });[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfunction removeWhiteBackground(imageElement) {[m
+[32m+[m[32m    const canvas = document.createElement('canvas');[m
+[32m+[m[32m    const context = canvas.getContext('2d', { willReadFrequently: true });[m
+[32m+[m[32m    const { naturalWidth, naturalHeight } = imageElement;[m
+[32m+[m
+[32m+[m[32m    if (!naturalWidth || !naturalHeight) return;[m
+[32m+[m
+[32m+[m[32m    canvas.width = naturalWidth;[m
+[32m+[m[32m    canvas.height = naturalHeight;[m
+[32m+[m[32m    context.drawImage(imageElement, 0, 0, naturalWidth, naturalHeight);[m
+[32m+[m
+[32m+[m[32m    const imageData = context.getImageData(0, 0, naturalWidth, naturalHeight);[m
+[32m+[m[32m    const { data } = imageData;[m
+[32m+[m[32m    const tolerance = 240; // 阈值越低，保留的浅色越多[m
+[32m+[m
+[32m+[m[32m    for (let i = 0; i < data.length; i += 4) {[m
+[32m+[m[32m        const r = data[i];[m
+[32m+[m[32m        const g = data[i + 1];[m
+[32m+[m[32m        const b = data[i + 2];[m
+[32m+[m
+[32m+[m[32m        if (r > tolerance && g > tolerance && b > tolerance) {[m
+[32m+[m[32m            data[i + 3] = 0;[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    context.putImageData(imageData, 0, 0);[m
+[32m+[m[32m    imageElement.src = canvas.toDataURL('image/png');[m
+[32m+[m[32m    imageElement.classList.add('bg-removed');[m
+[32m+[m[32m}[m
