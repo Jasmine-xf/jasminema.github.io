@@ -1022,6 +1022,15 @@ video::-webkit-media-controls-panel {
 /* Desktop web 图片最大宽度限制 */
 .section-content-right .gallery-item img[src*="indoor web final"] {
     max-width: 600px;
+    width: auto;
+}
+
+/* 确保在桌面尺寸下应用 600px 限制 */
+@media (min-width: 993px) {
+    .section-content-right .gallery-item img[src*="indoor web final"] {
+        max-width: 600px !important;
+        width: auto;
+    }
 }
 
 /* Prototyping 部分响应式优化 */
