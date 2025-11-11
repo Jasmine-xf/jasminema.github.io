@@ -3,6 +3,14 @@
 /* 全局图片最大宽度限制 */
 img {
     max-width: 907px;
+    height: auto;
+}
+
+/* 响应式图片处理 */
+@media (max-width: 992px) {
+    img {
+        max-width: 100%;
+    }
 }
 
 /* Key Findings 简洁布局样式 */
@@ -903,6 +911,14 @@ video::-webkit-media-controls-panel {
     cursor: pointer;
 }
 
+/* 响应式：画廊图片在小屏幕上 */
+@media (max-width: 992px) {
+    .gallery-item img {
+        max-width: 100%;
+        max-height: none;
+    }
+}
+
 
 .image-caption {
     font-size: 0.85rem;
@@ -1001,4 +1017,104 @@ video::-webkit-media-controls-panel {
     display: block;
     margin-left: 0;
     margin-right: 10px;
+}
+
+/* Desktop web 图片最大宽度限制 */
+.section-content-right .gallery-item img[src*="indoor web final"] {
+    max-width: 600px;
+}
+
+/* Prototyping 部分响应式优化 */
+@media (max-width: 992px) {
+    /* 中等屏幕：Mobile Interaction Flow 两列布局改为单列 */
+    .section-content-right .row .col-lg-3,
+    .section-content-right .row .col-lg-6 {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Desktop Interaction Flow 在小屏幕上堆叠 */
+    .section-content-right .row .col-lg-8,
+    .section-content-right .row .col-lg-4 {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* 图片在小屏幕上全宽 */
+    .section-content-right .gallery-item img {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .section-content-right .gallery-item img[src*="indoor web final"] {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 移动设备：所有列都堆叠 */
+    .section-content-right .row .col-lg-3,
+    .section-content-right .row .col-lg-6,
+    .section-content-right .row .col-lg-8,
+    .section-content-right .row .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    /* 图片在移动设备上全宽 */
+    .section-content-right .gallery-item {
+        margin-bottom: 1rem;
+    }
+    
+    .section-content-right .gallery-item img {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .section-content-right .gallery-item img[src*="indoor web final"] {
+        max-width: 100%;
+    }
+    
+    /* 文字大小调整 */
+    .section-content-right h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section-content-right h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-content-right p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    /* 减少垂直间距 */
+    .section-content-right .row.py-4 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 小屏幕进一步优化 */
+    .section-content-right h3 {
+        font-size: 1.1rem;
+    }
+    
+    .section-content-right h4 {
+        font-size: 1rem;
+    }
+    
+    .section-content-right p {
+        font-size: 0.85rem;
+    }
+    
+    .section-content-right .row.py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 }
