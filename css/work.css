@@ -2,7 +2,7 @@
 
 .work-hero {
     position: relative;
-    padding: 96px 24px 48px;
+    padding: 48px 24px 48px;
     text-align: left;
 }
 
@@ -167,7 +167,7 @@
 }
 
 .warning-icon {
-    color: #ff9800;
+    color: #ef5028;
     background: rgba(255, 152, 0, 0.1);
 }
 
@@ -301,7 +301,7 @@
 
 .pain-points-list li::before {
     content: "•";
-    color: #ff9800;
+    color: #ef5028;
     font-weight: bold;
     position: absolute;
     left: 0;

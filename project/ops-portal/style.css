@@ -410,7 +410,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* 引用样式 */
 .quote-container {
     position: relative;
-    padding: 2rem 3rem;
+    padding: 1.5rem 2rem;
     text-align: center;
     background: rgba(255, 193, 7, 0.1);
     border-radius: 15px;
@@ -452,6 +452,12 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 2;
     text-align: center;
     width: 100%;
+}
+
+/* 左对齐版本用于免责声明等说明文本 */
+.quote-text-left {
+    text-align: left;
+    font-style: normal;
 }
 
 /* 响应式优化 */
@@ -531,7 +537,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
     
     .quote-container {
-        padding: 1.2rem 1.5rem;
+        padding: 1rem 1.25rem;
         margin: 0;
         width: 100%;
     }
