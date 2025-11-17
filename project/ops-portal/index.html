@@ -86,7 +86,7 @@
                         <div class="section-content-right">
                             <div class="value-proposition-list">
                                 <div class="value-item">
-                                    <h3 class="value-title">The Challenge</h3>
+                                   
                                     <p>Government teams rely on accurate website and domain information to maintain service quality.</p>
                                     <p>But the previous system was:</p>
                                     <ul>
@@ -104,6 +104,38 @@
                                         </li>
                                     </ul>
                                     <p>Users were taking far too long to locate simple information such as website owners, URLs, statuses, or expiry dates. New users needed extensive training, and even experienced web stewards often struggled with exporting data or adding records without errors.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-title-left ">
+                            <h2>Research Questions</h2>
+                           
+                        </div>
+                        <div class="section-content-right">
+                            <div class="value-proposition-list">
+                                <div class="value-item">
+                                   
+                                
+                                  
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p>We wanted to understand:</p>
+                                            <ul>
+                                                <li>Why users struggled to complete key tasks</li>
+                                                <li>Which steps caused the most friction</li>
+                                                <li>How users expected to search, filter, and export data</li>
+                                                <li>What information architecture made sense for them</li>
+                                                <li>Which accessibility barriers existed</li>
+                                                <li>How to reduce onboarding time</li>
+                                                <li>How to support future scalability</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="gallery-item">
+                                                <img src="../../assets/images/db/WDB Research Questions.png" alt="Research Questions visualization">
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -118,22 +150,72 @@
             <div class="project-section mb-5 container">
                 <div class="section-layout">
                     <div class="section-title-left">
-                        <h2>Design Decisions</h2>
+                        <h2>Understanding the User Experience </h2>
                       
                     </div>
-                    <div class="section-content-left">
-                        <p class="scenarios-intro">To make the Citizen Service Portal not only visually appealing but also accessible and inclusive, I established a set of design decisions and content guidelines. These were informed by both primary research (user interviews & surveys) and secondary research (best practices & accessibility standards).</p>
-                        <div class="gallery-item ">
-                            <img src="../../assets/images/ops-mccss-logo.jpg" alt="OPS portal main interface showing unified navigation and service discovery">
-                          
+                    <div class="section-content-right">
+                        <div class="value-proposition-list">
+                            <div class="value-item">
+                                <h3 class="value-title">1. Internal Research Audit</h3>
+                                <p class="value-content">I reviewed existing documentation, historical tickets, and past feedback logs. Patterns quickly emerged:</p>
+                                <ul>
+                                    <li>Search fields were unclear</li>
+                                    <li>Too many filters, not enough guidance</li>
+                                    <li>Export was hidden and rarely discovered</li>
+                                    <li>Tables were overcrowded, inconsistent, and hard to scan</li>
+                                    <li>The "add new record" process had too many disconnected steps</li>
+                                </ul>
+                                <p class="value-content">I mapped breakpoints across the user journey to understand where drop-offs occurred.</p>
+                            </div>
+                            
+                            <div class="value-item">
+                                <h3 class="value-title">2. Industry Benchmarking</h3>
+                                <p class="value-content">To understand how other large platforms manage complex tables and admin tools, I reviewed:</p>
+                                <ul>
+                                    <li>Enterprise dashboards</li>
+                                    <li>Domain management tools</li>
+                                    <li>Government web governance systems</li>
+                                    <li>Common patterns in search + table interfaces</li>
+                                </ul>
+                                <p class="value-content">This helped shape best practices around:</p>
+                                <ul>
+                                    <li>Global vs scoped search</li>
+                                    <li>Table hierarchy</li>
+                                    <li>Export patterns</li>
+                                    <li>Batch actions</li>
+                                    <li>Progressive disclosure</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="value-item">
+                                <h3 class="value-title">3. New Usability Testing</h3>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p class="value-content">I conducted 10 usability testing sessions with a mix of experienced and new users. We focused on:</p>
+                                        <ul>
+                                            <li>Searching for website/domain data</li>
+                                            <li>Exporting a ministry-level list</li>
+                                            <li>Adding a new record</li>
+                                            <li>Understanding table labels</li>
+                                            <li>Navigating between sections</li>
+                                            <li>Completing tasks with accessibility tools (keyboard + screen reader)</li>
+                                        </ul>
+                                        <p class="value-content">Session notes were consolidated into:</p>
+                                        <ul>
+                                            <li>Desktop task flow</li>
+                                            <li>Mobile task flow</li>
+                                            <li>Key breakpoints</li>
+                                            <li>Cognitive load indicators</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="gallery-item">
+                                            <img src="../../assets/images/db/WDB Usability test result.png" alt="Usability test results visualization">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p> <b>Accessibility-first design:</b> Every component and interaction pattern is designed with WCAG 2.1 AA compliance as the baseline, ensuring inclusive access for all citizens.</p>
-                        <p> <b>Task-based organization:</b> Services are organized by what citizens want to accomplish rather than which department provides them, reducing cognitive load and improving findability.</p>
-                        <p> <b>Progressive disclosure:</b> Complex multi-step processes are broken down into manageable steps with clear progress indicators and contextual help.</p>
-                        <p> <b>Consistent interaction patterns:</b> Unified design system ensures consistent behavior across all government services, building user confidence and reducing learning curve.</p>
-                        <p> <b>Multiple support channels:</b> Integration of phone, chat, and in-person assistance options to support users with different comfort levels and needs.</p>
-                        <p> <b>Data-driven optimization:</b> Analytics and user feedback loops inform continuous improvement and ensure the portal evolves with citizen needs.</p>
-                        
                     </div>
                 </div>
             </div>
