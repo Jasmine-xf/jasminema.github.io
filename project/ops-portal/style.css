@@ -77,7 +77,7 @@
 .scenario-quote::before {
     content: '"';
     font-size: 48px;
-    color: #ff9800;
+    color: #EF5028;
     position: absolute;
     top: -10px;
     left: 10px;
@@ -94,7 +94,7 @@
 
 .goals-list li:hover {
     transform: translateX(8px);
-    color: #ff9800;
+    color: #EF5028;
 }
 
 .goals-list li::before {
@@ -104,7 +104,7 @@
     top: 0;
     width: 24px;
     height: 24px;
-    background: #ff9800;
+    background: #EF5028;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -124,7 +124,7 @@
 
 .pain-points-list li:hover {
     transform: translateX(8px);
-    color: #ff9800;
+    color: #EF5028;
 }
 
 .pain-points-list li::before {
@@ -134,7 +134,7 @@
     top: 0;
     width: 24px;
     height: 24px;
-    background: #ff9800;
+    background: #EF5028;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -232,7 +232,7 @@
     text-decoration: none;
     padding: 18px 36px;
     border-color: rgba(0, 0, 0, 0.2);
-    outline: 3px solid #ffc107;
+    outline: 3px solid #F57C5A;
     outline-offset: 3px;
 }
 
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: #333;
     margin: 2rem 0 1.5rem 0;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #ffc107;
+    border-bottom: 2px solid #F57C5A;
 }
 
 .design-decisions-section,
@@ -357,13 +357,13 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 1.2rem;
     background: rgba(248, 249, 250, 0.8);
     border-radius: 12px;
-    border-left: 4px solid #ffc107;
+    border-left: 4px solid #F57C5A;
     transition: all 0.3s ease;
 }
 
 .guideline-item {
-    border-left-color: #007bff;
-    background: rgba(240, 248, 255, 0.8);
+    border-left-color: #C73E1F;
+    background: rgba(239, 80, 40, 0.1);
 }
 
 .decision-item:hover,
@@ -412,9 +412,9 @@ h1, h2, h3, h4, h5, h6, p {
     position: relative;
     padding: 1.5rem 2rem;
     text-align: center;
-    background: rgba(255, 193, 7, 0.1);
+    background: rgba(239, 80, 40, 0.1);
     border-radius: 15px;
-    border-left: 4px solid #ffc107;
+    border-left: 4px solid #F57C5A;
     margin: 0;
     width: 100%;
     max-width: none;
@@ -424,7 +424,7 @@ h1, h2, h3, h4, h5, h6, p {
     position: absolute;
     font-size: 5rem;
     font-weight: 900;
-    color: #ffc107;
+    color: #F57C5A;
     font-family: Georgia, serif;
     line-height: 1;
     opacity: 0.8;

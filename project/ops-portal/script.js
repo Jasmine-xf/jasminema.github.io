@@ -25,9 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 修复导航链接路径
     fixNavigationPaths();
-    
-    // 初始化服务流程演示
-    initServiceFlowDemo();
 });
 
 // 修复导航链接路径
@@ -90,7 +87,7 @@ function initInteractiveEffects() {
     const goalItems = document.querySelectorAll('.goals-list li');
     goalItems.forEach(item => {
         item.addEventListener('click', function() {
-            this.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+            this.style.background = 'linear-gradient(135deg, #EF5028, #F57C5A)';
             this.style.color = 'white';
             this.style.transform = 'translateX(12px) scale(1.05)';
             
@@ -118,7 +115,7 @@ function initPageLoadAnimations() {
     if (title) {
         const text = title.textContent;
         title.textContent = '';
-        title.style.borderRight = '2px solid #28a745';
+        title.style.borderRight = '2px solid #EF5028';
         
         let i = 0;
         const typeWriter = () => {
@@ -148,94 +145,6 @@ function initPageLoadAnimations() {
     });
 }
 
-// 初始化服务流程演示
-function initServiceFlowDemo() {
-    // 创建服务流程演示元素
-    const demoContainer = document.createElement('div');
-    demoContainer.className = 'service-flow-demo mt-4';
-    demoContainer.innerHTML = `
-        <div class="demo-section">
-            <h5>Service Flow Demo</h5>
-            <div class="demo-controls">
-                <button class="btn btn-outline-success btn-sm" onclick="startServiceFlowDemo()">
-                    <i class="bi bi-play-circle"></i> Start Demo
-                </button>
-                <button class="btn btn-outline-secondary btn-sm" onclick="resetServiceFlowDemo()">
-                    <i class="bi bi-arrow-clockwise"></i> Reset
-                </button>
-            </div>
-            <div class="service-flow mt-3" id="service-flow" style="display: none;">
-                <div class="flow-step">
-                    <span class="step-number">1</span>
-                    <span class="step-text">User searches for "business registration"</span>
-                </div>
-                <div class="flow-step">
-                    <span class="step-number">2</span>
-                    <span class="step-text">System shows relevant services and requirements</span>
-                </div>
-                <div class="flow-step">
-                    <span class="step-number">3</span>
-                    <span class="step-text">User selects service and begins guided process</span>
-                </div>
-                <div class="flow-step">
-                    <span class="step-number">4</span>
-                    <span class="step-text">System provides step-by-step guidance with progress tracking</span>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // 将演示添加到第一个项目部分
-    const firstSection = document.querySelector('.project-section');
-    if (firstSection) {
-        firstSection.appendChild(demoContainer);
-    }
-}
-
-// 开始服务流程演示
-function startServiceFlowDemo() {
-    const serviceFlow = document.getElementById('service-flow');
-    if (serviceFlow) {
-        serviceFlow.style.display = 'block';
-        serviceFlow.style.opacity = '0';
-        serviceFlow.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            serviceFlow.style.transition = 'all 0.5s ease';
-            serviceFlow.style.opacity = '1';
-            serviceFlow.style.transform = 'translateY(0)';
-        }, 100);
-        
-        // 逐步显示流程步骤
-        const steps = serviceFlow.querySelectorAll('.flow-step');
-        steps.forEach((step, index) => {
-            step.style.opacity = '0';
-            step.style.transform = 'translateX(-20px)';
-            
-            setTimeout(() => {
-                step.style.transition = 'all 0.3s ease';
-                step.style.opacity = '1';
-                step.style.transform = 'translateX(0)';
-            }, 500 + (index * 300));
-        });
-    }
-}
-
-// 重置服务流程演示
-function resetServiceFlowDemo() {
-    const serviceFlow = document.getElementById('service-flow');
-    if (serviceFlow) {
-        serviceFlow.style.display = 'none';
-        serviceFlow.style.opacity = '0';
-        serviceFlow.style.transform = 'translateY(20px)';
-        
-        const steps = serviceFlow.querySelectorAll('.flow-step');
-        steps.forEach(step => {
-            step.style.opacity = '0';
-            step.style.transform = 'translateX(-20px)';
-        });
-    }
-}
 
 // 创建图片模态框
 function createImageModal(src, alt) {
@@ -321,58 +230,3 @@ document.addEventListener('touchend', function(e) {
     }
 });
 
-// 添加服务流程演示的CSS样式
-const demoStyles = `
-    .service-flow-demo {
-        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        border-radius: 12px;
-        padding: 20px;
-        border-left: 4px solid #28a745;
-    }
-    
-    .demo-controls {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-    
-    .flow-step {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        margin: 5px 0;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-    }
-    
-    .flow-step:hover {
-        transform: translateX(5px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
-    .step-number {
-        background: #28a745;
-        color: white;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        margin-right: 15px;
-        font-size: 0.9rem;
-    }
-    
-    .step-text {
-        flex: 1;
-        font-weight: 500;
-    }
-`;
-
-// 添加样式到页面
-const styleSheet = document.createElement('style');
-styleSheet.textContent = demoStyles;
-document.head.appendChild(styleSheet);
