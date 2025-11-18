@@ -193,7 +193,14 @@ class ComponentLoader {
         // 渲染页脚组件
         const footerContainer = document.getElementById('footer-container');
         if (footerContainer) {
-            footerContainer.innerHTML = this.components.footer;
+            let footerContent = this.components.footer;
+            
+            // 如果不是备用组件，需要动态调整路径
+            if (!this.isFallbackMode) {
+                footerContent = this.adjustFooterPaths(footerContent);
+            }
+            
+            footerContainer.innerHTML = footerContent;
         }
     }
 
@@ -228,6 +235,28 @@ class ComponentLoader {
         );
         
         return headerContent;
+    }
+
+    /**
+     * ===== 调整Footer路径方法 =====
+     * 动态调整外部加载的footer组件中的路径
+     */
+    adjustFooterPaths(footerContent) {
+        const basePath = this.getBasePath();
+        
+        // 替换视频路径
+        footerContent = footerContent.replace(
+            /src="assets\/images\/logovideo\.mp4"/g, 
+            `src="${basePath}assets/images/logovideo.mp4"`
+        );
+        
+        // 替换PDF文件路径
+        footerContent = footerContent.replace(
+            /href="assets\/file\//g, 
+            `href="${basePath}assets/file/`
+        );
+        
+        return footerContent;
     }
 
     /**

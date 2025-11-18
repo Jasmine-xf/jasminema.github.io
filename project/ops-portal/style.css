@@ -1,6 +1,8 @@
-/* OPS Portal项目专用样式 */
+/* ========================================
+   OPS Portal Project - Custom Styles
+   ======================================== */
 
-/* 自定义动画 */
+/* ===== Animations ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -23,7 +25,7 @@
     }
 }
 
-/* 页面加载动画 */
+/* ===== Page Load Animations ===== */
 .project-section {
     animation: fadeInUp 0.2s ease forwards;
     opacity: 0;
@@ -35,7 +37,7 @@
 .project-section:nth-child(4) { animation-delay: 0.4s; }
 .project-section:nth-child(5) { animation-delay: 0.5s; }
 
-/* 场景卡片特殊效果 */
+/* ===== Scenario Card Effects ===== */
 .scenario-card {
     position: relative;
     overflow: hidden;
@@ -56,7 +58,7 @@
     left: 100%;
 }
 
-/* 图标动画 */
+/* ===== Icon Animations ===== */
 .section-icon {
     transition: transform 0.3s ease;
 }
@@ -65,7 +67,7 @@
     transform: scale(1.1) rotate(5deg);
 }
 
-/* 引用样式增强 */
+/* ===== Quote Styles ===== */
 .scenario-quote {
     position: relative;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -84,7 +86,7 @@
     font-family: serif;
 }
 
-/* 目标列表增强 */
+/* ===== Goals List Styles ===== */
 .goals-list li {
     position: relative;
     padding-left: 32px;
@@ -114,7 +116,7 @@
     font-weight: bold;
 }
 
-/* 痛点列表增强 */
+/* ===== Pain Points List Styles ===== */
 .pain-points-list li {
     position: relative;
     padding-left: 32px;
@@ -144,17 +146,17 @@
     font-weight: bold;
 }
 
-/* 画廊增强效果 */
+/* ===== Gallery Effects ===== */
 .gallery-item img {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Design Decisions 图片无动画 */
+/* Design Decisions section - disable image animation */
 .section-content-left .gallery-item img {
     transition: none;
 }
 
-/* User Reflection 图片宽度限制 */
+/* User Reflection section - image width constraints */
 .section-content-right .gallery-item img {
     max-width: 100%;
     width: 100%;
@@ -162,7 +164,7 @@
     object-fit: contain;
 }
 
-/* Gallery图片内按钮样式 */
+/* ===== Gallery Button Styles ===== */
 .gallery-item-with-button {
     position: relative;
     overflow: hidden;
@@ -236,7 +238,7 @@
     outline-offset: 3px;
 }
 
-/* 按钮图标样式 */
+/* Button icon styles */
 .gallery-figma-btn i {
     font-size: 1.3rem;
     font-weight: 900;
@@ -248,18 +250,18 @@
     transform: scale(1.1);
 }
 
-/* 按钮点击效果 */
+/* Button click effects */
 .gallery-figma-btn:active {
     transform: translateY(-1px) scale(1.02);
     transition: all 0.1s ease;
 }
 
-/* 字体设置 */
+/* ===== Typography ===== */
 h1, h2, h3, h4, h5, h6, p {
     font-family: "Figtree", "Figtree Placeholder", sans-serif;
 }
 
-/* 新的左右布局样式 */
+/* ===== Section Layout Styles ===== */
 .section-layout {
     display: grid;
     grid-template-columns:0.75fr 2fr;
@@ -288,7 +290,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 0;
 }
 
-/* Value Proposition 样式 */
+/* ===== Value Proposition Styles ===== */
 .value-proposition-list {
     display: flex;
     flex-direction: column;
@@ -327,7 +329,7 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.6;
 }
 
-/* Design Decisions & Content Guidelines 样式 */
+/* ===== Design Decisions & Content Guidelines Styles ===== */
 .subsection-title {
     font-size: 1.3rem;
     font-weight: 600;
@@ -401,13 +403,13 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.6;
 }
 
-/* Hero引用部分 */
+/* ===== Hero Quote Section ===== */
 .hero-quote-section {
     margin: 2rem 0;
     width: 100%;
 }
 
-/* 引用样式 */
+/* Quote container styles */
 .quote-container {
     position: relative;
     padding: 1.5rem 2rem;
@@ -454,13 +456,13 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
 }
 
-/* 左对齐版本用于免责声明等说明文本 */
+/* Left-aligned quote text for disclaimers */
 .quote-text-left {
     text-align: left;
     font-style: normal;
 }
 
-/* 响应式优化 */
+/* ===== Responsive Styles ===== */
 @media (max-width: 768px) {
     .scenario-card {
         margin-bottom: 20px;
@@ -595,7 +597,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-/* 滚动动画 */
+/* ===== Scroll Animations ===== */
 .scroll-animate {
     opacity: 0;
     transform: translateY(30px);
@@ -607,7 +609,7 @@ h1, h2, h3, h4, h5, h6, p {
     transform: translateY(0);
 }
 
-/* 视频播放器样式 */
+/* ===== Video Player Styles ===== */
 video {
     max-width: 100%;
     height: auto;
@@ -615,7 +617,7 @@ video {
     object-fit: contain;
 }
 
-/* 去除视频黑色背景 */
+/* Remove video black background */
 video::-webkit-media-controls {
     background: transparent;
 }
@@ -624,7 +626,7 @@ video::-webkit-media-controls-panel {
     background: transparent;
 }
 
-/* 响应式视频样式 */
+/* Responsive video styles */
 @media (max-width: 768px) {
     video {
         border-radius: 8px;

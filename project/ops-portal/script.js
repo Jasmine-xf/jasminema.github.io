@@ -1,11 +1,15 @@
-// OPS Portal项目专用JavaScript
+/* ========================================
+   OPS Portal Project - Custom JavaScript
+   ======================================== */
 
-// 立即修复组件路径问题（在DOM加载前执行）
+/**
+ * Fix component path issues before DOM loads
+ * Rewrites fetch paths to load components from correct relative paths
+ */
 (function() {
-    // 重写fetch路径，使其从正确的相对路径加载组件
     const originalFetch = window.fetch;
     window.fetch = function(url, options) {
-        // 如果是组件文件，修正路径
+        // Fix path for component files
         if (url.includes('components/')) {
             url = '../../' + url;
         }
@@ -13,38 +17,39 @@
     };
 })();
 
+/**
+ * Initialize all features when DOM is ready
+ */
 document.addEventListener('DOMContentLoaded', function() {
-    // 滚动动画
     initScrollAnimations();
-    
-    // 交互效果
     initInteractiveEffects();
-    
-    // 页面加载动画
     initPageLoadAnimations();
-    
-    // 修复导航链接路径
     fixNavigationPaths();
 });
 
-// 修复导航链接路径
+/**
+ * Fix navigation link paths
+ * Adds correct parent directory paths for relative links
+ */
 function fixNavigationPaths() {
     setTimeout(() => {
-        // 修复所有导航链接
         const allLinks = document.querySelectorAll('a[href]');
         allLinks.forEach(link => {
             const href = link.getAttribute('href');
             if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
-                // 为相对路径添加正确的上级目录
+                // Add correct parent directory for relative paths
                 if (href === 'index.html' || href === 'about.html' || href === 'resume.html') {
                     link.setAttribute('href', '../../../' + href);
                 }
             }
         });
-    }, 100); // 等待组件加载完成
+    }, 100); // Wait for components to load
 }
 
-// 滚动动画
+/**
+ * Initialize scroll animations using Intersection Observer
+ * Adds fade-in animations to elements as they enter viewport
+ */
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -67,9 +72,12 @@ function initScrollAnimations() {
     });
 }
 
-// 交互效果
+/**
+ * Initialize interactive effects
+ * Handles hover effects for cards and click interactions
+ */
 function initInteractiveEffects() {
-    // 场景卡片悬停效果
+    // Scenario card hover effects
     const scenarioCards = document.querySelectorAll('.scenario-card');
     scenarioCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -83,7 +91,7 @@ function initInteractiveEffects() {
         });
     });
 
-    // 目标列表项点击效果
+    // Goals list item click effects
     const goalItems = document.querySelectorAll('.goals-list li');
     goalItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -99,7 +107,7 @@ function initInteractiveEffects() {
         });
     });
 
-    // 画廊图片点击放大
+    // Gallery image click to enlarge
     const galleryImages = document.querySelectorAll('.gallery-item img');
     galleryImages.forEach(img => {
         img.addEventListener('click', function() {
@@ -108,9 +116,12 @@ function initInteractiveEffects() {
     });
 }
 
-// 页面加载动画
+/**
+ * Initialize page load animations
+ * Handles typewriter effect for title and gallery item animations
+ */
 function initPageLoadAnimations() {
-    // 标题打字机效果
+    // Title typewriter effect
     const title = document.querySelector('.work-title');
     if (title) {
         const text = title.textContent;
@@ -131,7 +142,7 @@ function initPageLoadAnimations() {
         setTimeout(typeWriter, 500);
     }
 
-    // 画廊图片依次显示
+    // Gallery items appear sequentially
     const galleryItems = document.querySelectorAll('.gallery-item');
     galleryItems.forEach((item, index) => {
         item.style.opacity = '0';
@@ -146,7 +157,11 @@ function initPageLoadAnimations() {
 }
 
 
-// 创建图片模态框
+/**
+ * Create image modal for enlarged view
+ * @param {string} src - Image source URL
+ * @param {string} alt - Image alt text
+ */
 function createImageModal(src, alt) {
     const modal = document.createElement('div');
     modal.className = 'image-modal';
@@ -182,7 +197,10 @@ function createImageModal(src, alt) {
     });
 }
 
-// 平滑滚动到锚点
+/**
+ * Smooth scroll to anchor point
+ * @param {string} target - CSS selector for target element
+ */
 function smoothScrollTo(target) {
     const element = document.querySelector(target);
     if (element) {
@@ -193,7 +211,10 @@ function smoothScrollTo(target) {
     }
 }
 
-// 添加键盘导航支持
+/**
+ * Keyboard navigation support
+ * Closes modal on Escape key press
+ */
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const modal = document.querySelector('.image-modal');
@@ -203,7 +224,10 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// 添加触摸手势支持（移动端）
+/**
+ * Touch gesture support for mobile devices
+ * Detects swipe gestures for navigation
+ */
 let touchStartX = 0;
 let touchStartY = 0;
 
@@ -218,13 +242,13 @@ document.addEventListener('touchend', function(e) {
     const diffX = touchStartX - touchEndX;
     const diffY = touchStartY - touchEndY;
     
-    // 检测滑动手势
+    // Detect swipe gestures
     if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
         if (diffX > 0) {
-            // 向左滑动 - 可以添加导航到下一个项目
+            // Swipe left - can add navigation to next project
             console.log('Swipe left detected');
         } else {
-            // 向右滑动 - 可以添加导航到上一个项目
+            // Swipe right - can add navigation to previous project
             console.log('Swipe right detected');
         }
     }
