@@ -1,5 +1,19 @@
 /* GasRoute项目专用样式 */
 
+/* Visually Hidden - 对屏幕阅读器可见但视觉上隐藏 */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    clip-path: inset(50%) !important;
+}
+
 /* 自定义动画 */
 @keyframes fadeInUp {
     from {
@@ -77,7 +91,7 @@
 .scenario-quote::before {
     content: '"';
     font-size: 48px;
-    color: #ff9800;
+    color: #2563eb;
     position: absolute;
     top: -10px;
     left: 10px;
@@ -94,7 +108,7 @@
 
 .goals-list li:hover {
     transform: translateX(8px);
-    color: #ff9800;
+    color: #2563eb;
 }
 
 .goals-list li::before {
@@ -104,7 +118,7 @@
     top: 0;
     width: 24px;
     height: 24px;
-    background: #ff9800;
+    background: #2563eb;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -124,7 +138,7 @@
 
 .pain-points-list li:hover {
     transform: translateX(8px);
-    color: #ff9800;
+    color: #2563eb;
 }
 
 .pain-points-list li::before {
@@ -134,7 +148,7 @@
     top: 0;
     width: 24px;
     height: 24px;
-    background: #ff9800;
+    background: #2563eb;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -298,7 +312,7 @@
     text-decoration: none;
     padding: 18px 36px;
     border-color: rgba(0, 0, 0, 0.2);
-    outline: 3px solid #ffc107;
+    outline: 3px solid #2563eb;
     outline-offset: 3px;
 }
 
@@ -400,7 +414,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: #333;
     margin: 2rem 0 1.5rem 0;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #ffc107;
+    border-bottom: 2px solid #2563eb;
 }
 
 .design-decisions-section,
@@ -423,7 +437,7 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 1.2rem;
     background: rgba(248, 249, 250, 0.8);
     border-radius: 12px;
-    border-left: 4px solid #ffc107;
+    border-left: 4px solid #2563eb;
     transition: all 0.3s ease;
 }
 
@@ -478,9 +492,9 @@ h1, h2, h3, h4, h5, h6, p {
     position: relative;
     padding: 2rem 3rem;
     text-align: center;
-    background: rgba(255, 193, 7, 0.1);
+    background: rgba(37, 99, 235, 0.1);
     border-radius: 15px;
-    border-left: 4px solid #ffc107;
+    border-left: 4px solid #2563eb;
     margin: 0;
     width: 100%;
     max-width: none;
@@ -490,7 +504,7 @@ h1, h2, h3, h4, h5, h6, p {
     position: absolute;
     font-size: 5rem;
     font-weight: 900;
-    color: #ffc107;
+    color: #2563eb;
     font-family: Georgia, serif;
     line-height: 1;
     opacity: 0.8;

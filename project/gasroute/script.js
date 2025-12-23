@@ -87,7 +87,7 @@ function initInteractiveEffects() {
     const goalItems = document.querySelectorAll('.goals-list li');
     goalItems.forEach(item => {
         item.addEventListener('click', function() {
-            this.style.background = 'linear-gradient(135deg, #ffc107, #ff8c00)';
+            this.style.background = 'linear-gradient(135deg, #2563eb, #1e40af)';
             this.style.color = 'white';
             this.style.transform = 'translateX(12px) scale(1.05)';
             
@@ -115,7 +115,7 @@ function initPageLoadAnimations() {
     if (title) {
         const text = title.textContent;
         title.textContent = '';
-        title.style.borderRight = '2px solid #ffc107';
+        title.style.borderRight = '2px solid #2563eb';
         
         let i = 0;
         const typeWriter = () => {
