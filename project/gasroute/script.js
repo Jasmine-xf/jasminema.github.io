@@ -25,9 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 修复导航链接路径
     fixNavigationPaths();
-    
-    // 初始化燃料价格演示
-    initFuelPriceDemo();
 });
 
 // 修复导航链接路径
@@ -148,102 +145,6 @@ function initPageLoadAnimations() {
     });
 }
 
-// 初始化燃料价格演示
-function initFuelPriceDemo() {
-    // 创建燃料价格演示元素
-    const demoContainer = document.createElement('div');
-    demoContainer.className = 'fuel-price-demo mt-4';
-    demoContainer.innerHTML = `
-        <div class="demo-section">
-            <h5>Fuel Price Comparison Demo</h5>
-            <div class="demo-controls">
-                <button class="btn btn-outline-warning btn-sm" onclick="startFuelPriceDemo()">
-                    <i class="bi bi-play-circle"></i> Start Demo
-                </button>
-                <button class="btn btn-outline-secondary btn-sm" onclick="resetFuelPriceDemo()">
-                    <i class="bi bi-arrow-clockwise"></i> Reset
-                </button>
-            </div>
-            <div class="price-comparison mt-3" id="price-comparison" style="display: none;">
-                <div class="station-card">
-                    <span class="station-name">Shell Station</span>
-                    <span class="station-price">$1.45/L</span>
-                    <span class="station-distance">0.8 km</span>
-                </div>
-                <div class="station-card">
-                    <span class="station-name">Esso Station</span>
-                    <span class="station-price">$1.42/L</span>
-                    <span class="station-distance">1.2 km</span>
-                </div>
-                <div class="station-card best-deal">
-                    <span class="station-name">Petro-Canada</span>
-                    <span class="station-price">$1.38/L</span>
-                    <span class="station-distance">1.5 km</span>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // 将演示添加到第一个项目部分
-    const firstSection = document.querySelector('.project-section');
-    if (firstSection) {
-        firstSection.appendChild(demoContainer);
-    }
-}
-
-// 开始燃料价格演示
-function startFuelPriceDemo() {
-    const priceComparison = document.getElementById('price-comparison');
-    if (priceComparison) {
-        priceComparison.style.display = 'block';
-        priceComparison.style.opacity = '0';
-        priceComparison.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            priceComparison.style.transition = 'all 0.5s ease';
-            priceComparison.style.opacity = '1';
-            priceComparison.style.transform = 'translateY(0)';
-        }, 100);
-        
-        // 逐步显示加油站卡片
-        const stationCards = priceComparison.querySelectorAll('.station-card');
-        stationCards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateX(-20px)';
-            
-            setTimeout(() => {
-                card.style.transition = 'all 0.3s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateX(0)';
-                
-                // 为最佳交易添加特殊效果
-                if (card.classList.contains('best-deal')) {
-                    setTimeout(() => {
-                        card.style.animation = 'pulse 1s ease-in-out 3';
-                    }, 500);
-                }
-            }, 500 + (index * 300));
-        });
-    }
-}
-
-// 重置燃料价格演示
-function resetFuelPriceDemo() {
-    const priceComparison = document.getElementById('price-comparison');
-    if (priceComparison) {
-        priceComparison.style.display = 'none';
-        priceComparison.style.opacity = '0';
-        priceComparison.style.transform = 'translateY(20px)';
-        
-        const stationCards = priceComparison.querySelectorAll('.station-card');
-        stationCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateX(-20px)';
-            card.style.animation = '';
-        });
-    }
-}
-
 // 创建图片模态框
 function createImageModal(src, alt) {
     const modal = document.createElement('div');
@@ -328,61 +229,3 @@ document.addEventListener('touchend', function(e) {
     }
 });
 
-// 添加燃料价格演示的CSS样式
-const demoStyles = `
-    .fuel-price-demo {
-        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        border-radius: 12px;
-        padding: 20px;
-        border-left: 4px solid #ffc107;
-    }
-    
-    .demo-controls {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-    
-    .station-card {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px;
-        margin: 8px 0;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-    }
-    
-    .station-card:hover {
-        transform: translateX(5px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
-    .station-card.best-deal {
-        border: 2px solid #ffc107;
-        background: linear-gradient(135deg, #fff9e6, #fff3cd);
-    }
-    
-    .station-name {
-        font-weight: 600;
-        flex: 1;
-    }
-    
-    .station-price {
-        font-weight: bold;
-        color: #ffc107;
-        margin: 0 15px;
-    }
-    
-    .station-distance {
-        color: #6c757d;
-        font-size: 0.9rem;
-    }
-`;
-
-// 添加样式到页面
-const styleSheet = document.createElement('style');
-styleSheet.textContent = demoStyles;
-document.head.appendChild(styleSheet);

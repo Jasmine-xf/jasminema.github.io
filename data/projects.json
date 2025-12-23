@@ -82,16 +82,14 @@
   },
   {
     "slug": "gasroute",
-    "title": "GasRoute: A Mobile Application for Locating Nearby Gas Stations",
+    "title": "Gas Route",
     "category": "Mobile UX",
     "type": "Course Project",
     "duration": "3 Weeks",
-    "summary": "A location-aware mobile application that helps drivers quickly find nearby gas stations with real-time pricing, route optimization, and one-tap navigation to save time and money on fuel.",
+    "summary": "Helping drivers stop overthinking gas stops. A mobile app that supports refueling decisions through route context and quick safety cues.",
     "gallery": [
-      { "src": "assets/images/Power-BI-Logo.png", "alt": "GasRoute mobile app interface showing nearby gas stations with pricing", "span": 6 },
-      { "src": "assets/images/figma-logo.avif", "alt": "User flow diagrams and wireframes for the mobile app", "span": 6 },
-      { "src": "assets/images/ux research-icon.png", "alt": "User research and contextual inquiry process", "span": 8 },
-      { "src": "assets/images/service design-icon.png", "alt": "Service design and task-first navigation approach", "span": 4 }
+      { "src": "assets/images/gasroute/GAS banner.png", "alt": "GasRoute mobile app interface showing nearby gas stations with pricing", "span": 8 },
+      { "src": "assets/images/gasroute/gas ph.png", "alt": "User flow diagrams and wireframes for the mobile app", "span": 4 }
     ],
     "problem": "Drivers frequently struggle to find the most cost-effective gas stations while on the road. Current solutions often lack real-time pricing information, don't consider route efficiency, and fail to provide quick decision-making tools. This leads to increased travel time, higher fuel costs, and unnecessary stress during trips.",
     "goal": "Surface closest good-value gas stations with real-time pricing information, provide one-tap routing and navigation integration for seamless user experience, minimize decision-making time with clear visual indicators and quick comparisons, and optimize route planning to reduce detours and travel time.",

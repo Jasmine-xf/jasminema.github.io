@@ -162,6 +162,72 @@
     object-fit: contain;
 }
 
+/* 列表样式增强 */
+.section-content-right ul,
+.section-content-right ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.section-content-right ul li,
+.section-content-right ol li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.section-content-right ul li strong,
+.section-content-right ol li strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* 段落样式 */
+.section-content-right p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.section-content-right p:last-child {
+    margin-bottom: 0;
+}
+
+/* Hero Section Design Objective 布局 */
+.work-hero .row.align-items-center {
+    margin-top: 3rem;
+}
+
+.work-hero .gallery-item {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.work-hero .gallery-item img {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.work-hero .gallery-item img:hover {
+    transform: scale(1.02);
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .work-hero .row.align-items-center {
+        margin-top: 2rem;
+    }
+    
+    .work-hero .col-lg-6 {
+        margin-bottom: 2rem;
+    }
+    
+    .work-hero .col-lg-6:last-child {
+        margin-bottom: 0;
+    }
+}
+
 /* Gallery图片内按钮样式 */
 .gallery-item-with-button {
     position: relative;
