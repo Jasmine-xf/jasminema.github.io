@@ -20,38 +20,12 @@ function scrollToProjects() {
 function initHomepageFeatures() {
     initProjectInteractions();
     initButtonActions();
-    initParallaxEffects();
-    initDeviceAnimations();
     initComingSoon();
 }
 
 // 项目交互功能
 function initProjectInteractions() {
-    const projectItems = document.querySelectorAll('.project-item');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    // 为项目项添加悬停效果
-    projectItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.transition = 'transform 0.3s ease';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-    
-    // 为项目卡片添加点击效果
-    projectCards.forEach(card => {
-        card.addEventListener('click', function(event) {
-            // 添加点击波纹效果
-            PortfolioUtils.createRippleEffect(event, this);
-            
-            // 可以在这里添加跳转到项目详情页的逻辑
-            console.log('Project card clicked:', this.querySelector('.card-title').textContent);
-        });
-    });
+    // 移除不必要的动画效果，保持简洁
 }
 
 // 暂停项目入口：Coming soon
@@ -124,44 +98,6 @@ function initButtonActions() {
     }
 }
 
-// 视差效果
-function initParallaxEffects() {
-    const gradientBgs = document.querySelectorAll('.gradient-bg');
-    
-    // 使用节流函数优化滚动性能
-    const throttledScroll = PortfolioUtils.throttle(function() {
-        const scrolled = window.pageYOffset;
-        
-        gradientBgs.forEach((bg, index) => {
-            const speed = 0.3 + (index * 0.1); // 不同层级的移动速度
-            const yPos = -(scrolled * speed);
-            bg.style.transform = `translateY(${yPos}px)`;
-        });
-    }, 16); // 约60fps
-    
-    window.addEventListener('scroll', throttledScroll);
-}
-
-// 设备动画效果
-function initDeviceAnimations() {
-    const devices = document.querySelectorAll('.project-device');
-    
-    // 使用 Intersection Observer 检测设备进入视口
-    const deviceObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('device-animate');
-            }
-        });
-    }, {
-        threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px'
-    });
-    
-    devices.forEach(device => {
-        deviceObserver.observe(device);
-    });
-}
 
 // 使用common.js中的createRippleEffect函数
 
@@ -346,54 +282,3 @@ function showContactForm() {
     });
 }
 
-// 添加设备动画样式
-if (!document.querySelector('#device-animations')) {
-    const styles = document.createElement('style');
-    styles.id = 'device-animations';
-    styles.textContent = `
-        .project-device {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .project-device.device-animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .project-item {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        
-        .project-item.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .project-card {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .project-card.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .hero-content {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        
-        .hero-content.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    `;
-    document.head.appendChild(styles);
-}

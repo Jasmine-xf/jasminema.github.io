@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initSmoothScroll();
     initBackToTop();
-    initScrollAnimations();
 });
 
 // 导航栏功能
@@ -83,28 +82,6 @@ function initBackToTop() {
     }
 }
 
-// 滚动动画功能
-function initScrollAnimations() {
-    // 使用 Intersection Observer API 检测元素进入视口
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-    
-    // 观察需要动画的元素
-    const animateElements = document.querySelectorAll('.project-item, .project-card, .hero-content');
-    animateElements.forEach(el => {
-        observer.observe(el);
-    });
-}
 
 // 工具函数：节流函数
 function throttle(func, limit) {

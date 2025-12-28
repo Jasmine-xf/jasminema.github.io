@@ -165,21 +165,35 @@
     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
     border-radius: 10px;
     cursor: pointer;
-    transition: box-shadow 0.2s;
+    transition: filter 0.2s;
+    outline: none !important;
+    border: none !important;
+}
+
+.sticker-link {
+    outline: none !important;
+    border: none !important;
+    text-decoration: none;
 }
 
 .sticker-link:hover .sticker-img {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.35));
 }
-/* Sticker 定位和初始旋转 */
-.sticker-img[title="Toronto Yú Theatre"] {
+
+.sticker-link:focus,
+.sticker-link:focus-visible {
+    outline: none !important;
+    border: none !important;
+}
+/* Sticker 定位和初始旋转 - 使用title开头匹配 */
+.sticker-img[title^="Toronto Yú Theatre"] {
     position: absolute;
     left: 10%;
     top: 10%;
     width: 120px;
     transform: rotate(-8deg);
 }
-.sticker-img[title="Toronto Fringe Festival"] {
+.sticker-img[title^="Toronto Fringe Festival"] {
     position: absolute;
     left: 70%;
     top: 18%;
@@ -187,42 +201,42 @@
     transform: rotate(12deg);
 
 }
-.sticker-img[title="Singer & Guitar"] {
+.sticker-img[title^="Singing & Guitar"] {
     position: absolute;
     left: 30%;
     top: 50%;
     width: 160px;
     transform: rotate(5deg);
 }
-.sticker-img[title="Frisbee"] {
+.sticker-img[title^="Frisbee"] {
     position: absolute;
     left: 80%;
     top: 60%;
     width: 90px;
     transform: rotate(7deg);
 }
-.sticker-img[title="Allegro"] {
+.sticker-img[title^="Allegro Choir"] {
     position: absolute;
     left: 60%;
     top: 75%;
     width: 80px;
     transform: rotate(-10deg);
 }
-.sticker-img[title="Calligraphy"] {
+.sticker-img[title^="Calligraphy"] {
     position: absolute;
     left: 18%;
     top: 30%;
     width: 80px;
     transform: rotate(-10deg);
 }
-.sticker-img[title="Kunqu Opera"] {
+.sticker-img[title^="Kunqu Opera"] {
     position: absolute;
     left: 10%;
     top: 50%;
     width: 90px;
     transform: rotate(15deg);
 }
-.sticker-img[title="D&D"] {
+.sticker-img[title^="D&D"] {
     position: absolute;
     left: 60%;
     top: 36%;
@@ -404,8 +418,10 @@
   border-radius: 10px;
   padding: 12px 16px;
   font-size: 14px;
-  max-width: 260px; /* 适合当说明框 */
-
+  max-width: 400px !important; /* 增加宽度以显示完整说明 */
+  white-space: normal !important; /* 允许文字换行 */
+  text-align: left !important; /* 左对齐更易读 */
+  line-height: 1.5 !important;
 }
 
 /* Experience 图片组行内间距缩小（上方两行四图） */
