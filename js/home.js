@@ -21,11 +21,39 @@ function initHomepageFeatures() {
     initProjectInteractions();
     initButtonActions();
     initComingSoon();
+    initProjectCardAnimations();
 }
 
 // 项目交互功能
 function initProjectInteractions() {
     // 移除不必要的动画效果，保持简洁
+}
+
+// 项目卡片出现动画
+function initProjectCardAnimations() {
+    const projectCards = document.querySelectorAll('.project-section .project-card');
+    
+    if (projectCards.length === 0) return;
+    
+    // 使用 Intersection Observer 检测卡片进入视口
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // 添加延迟，让卡片依次出现
+                setTimeout(() => {
+                    entry.target.classList.add('animate-in');
+                }, index * 80); // 每个卡片延迟80ms，快速连续出现
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    projectCards.forEach(card => {
+        observer.observe(card);
+    });
 }
 
 // 暂停项目入口：Coming soon

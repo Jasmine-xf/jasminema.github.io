@@ -156,6 +156,14 @@ main {
     background: #f5f6f7; /* 更克制的灰白背景 */
     border-color: transparent;
     box-shadow: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-section .project-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-section .project-card:hover {
