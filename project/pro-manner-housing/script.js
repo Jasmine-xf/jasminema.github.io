@@ -25,9 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 修复导航链接路径
     fixNavigationPaths();
-    
-    // 初始化房产搜索演示
-    initPropertySearchDemo();
 });
 
 // 修复导航链接路径
@@ -148,94 +145,6 @@ function initPageLoadAnimations() {
     });
 }
 
-// 初始化房产搜索演示
-function initPropertySearchDemo() {
-    // 创建房产搜索演示元素
-    const demoContainer = document.createElement('div');
-    demoContainer.className = 'property-search-demo mt-4';
-    demoContainer.innerHTML = `
-        <div class="demo-section">
-            <h5>Property Search Demo</h5>
-            <div class="demo-controls">
-                <button class="btn btn-outline-primary btn-sm" onclick="startPropertySearchDemo()">
-                    <i class="bi bi-play-circle"></i> Start Demo
-                </button>
-                <button class="btn btn-outline-secondary btn-sm" onclick="resetPropertySearchDemo()">
-                    <i class="bi bi-arrow-clockwise"></i> Reset
-                </button>
-            </div>
-            <div class="property-search mt-3" id="property-search" style="display: none;">
-                <div class="search-step">
-                    <span class="step-number">1</span>
-                    <span class="step-text">Set location and budget preferences</span>
-                </div>
-                <div class="search-step">
-                    <span class="step-number">2</span>
-                    <span class="step-text">Browse filtered property listings with detailed information</span>
-                </div>
-                <div class="search-step">
-                    <span class="step-number">3</span>
-                    <span class="step-text">Schedule virtual tours and view property details</span>
-                </div>
-                <div class="search-step">
-                    <span class="step-number">4</span>
-                    <span class="step-text">Submit application and manage lease through platform</span>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // 将演示添加到第一个项目部分
-    const firstSection = document.querySelector('.project-section');
-    if (firstSection) {
-        firstSection.appendChild(demoContainer);
-    }
-}
-
-// 开始房产搜索演示
-function startPropertySearchDemo() {
-    const propertySearch = document.getElementById('property-search');
-    if (propertySearch) {
-        propertySearch.style.display = 'block';
-        propertySearch.style.opacity = '0';
-        propertySearch.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            propertySearch.style.transition = 'all 0.5s ease';
-            propertySearch.style.opacity = '1';
-            propertySearch.style.transform = 'translateY(0)';
-        }, 100);
-        
-        // 逐步显示搜索步骤
-        const searchSteps = propertySearch.querySelectorAll('.search-step');
-        searchSteps.forEach((step, index) => {
-            step.style.opacity = '0';
-            step.style.transform = 'translateX(-20px)';
-            
-            setTimeout(() => {
-                step.style.transition = 'all 0.3s ease';
-                step.style.opacity = '1';
-                step.style.transform = 'translateX(0)';
-            }, 500 + (index * 300));
-        });
-    }
-}
-
-// 重置房产搜索演示
-function resetPropertySearchDemo() {
-    const propertySearch = document.getElementById('property-search');
-    if (propertySearch) {
-        propertySearch.style.display = 'none';
-        propertySearch.style.opacity = '0';
-        propertySearch.style.transform = 'translateY(20px)';
-        
-        const searchSteps = propertySearch.querySelectorAll('.search-step');
-        searchSteps.forEach(step => {
-            step.style.opacity = '0';
-            step.style.transform = 'translateX(-20px)';
-        });
-    }
-}
 
 // 创建图片模态框
 function createImageModal(src, alt) {
@@ -321,58 +230,3 @@ document.addEventListener('touchend', function(e) {
     }
 });
 
-// 添加房产搜索演示的CSS样式
-const demoStyles = `
-    .property-search-demo {
-        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        border-radius: 12px;
-        padding: 20px;
-        border-left: 4px solid #6f42c1;
-    }
-    
-    .demo-controls {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-    
-    .search-step {
-        display: flex;
-        align-items: center;
-        padding: 12px;
-        margin: 8px 0;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-    }
-    
-    .search-step:hover {
-        transform: translateX(5px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
-    .step-number {
-        background: #6f42c1;
-        color: white;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        margin-right: 15px;
-        font-size: 0.9rem;
-    }
-    
-    .step-text {
-        flex: 1;
-        font-weight: 500;
-    }
-`;
-
-// 添加样式到页面
-const styleSheet = document.createElement('style');
-styleSheet.textContent = demoStyles;
-document.head.appendChild(styleSheet);
