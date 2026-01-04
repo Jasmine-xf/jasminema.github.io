@@ -254,6 +254,40 @@
     transition: all 0.1s ease;
 }
 
+/* 独立原型按钮样式（扁平设计，白色背景，细边框） */
+.prototype-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #ccc;
+    justify-content: flex-start;
+}
+
+.prototype-btn:hover,
+.prototype-btn:focus {
+    background: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    border-color: #999;
+}
+
+.prototype-btn i {
+    font-size: 1.2rem;
+    color: #6c9eff;
+}
+
+.prototype-btn span {
+    color: #333;
+}
+
 /* 字体设置 */
 h1, h2, h3, h4, h5, h6, p {
     font-family: "Figtree", "Figtree Placeholder", sans-serif;
