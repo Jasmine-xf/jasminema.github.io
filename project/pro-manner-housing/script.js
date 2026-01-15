@@ -99,12 +99,19 @@ function initInteractiveEffects() {
         });
     });
 
-    // 画廊图片点击放大
-    const galleryImages = document.querySelectorAll('.gallery-item img');
-    galleryImages.forEach(img => {
-        img.addEventListener('click', function() {
-            createImageModal(this.src, this.alt);
-        });
+    // 所有图片点击在新窗口打开大图（排除已有按钮的图片和链接内的图片）
+    const allImages = document.querySelectorAll('img');
+    allImages.forEach(img => {
+        // 排除已有按钮的图片和链接内的图片
+        const galleryItem = img.closest('.gallery-item-with-button');
+        const linkParent = img.closest('a');
+        
+        if (!galleryItem && !linkParent) {
+            img.addEventListener('click', function(e) {
+                // 在新窗口打开大图
+                window.open(this.src, '_blank', 'noopener,noreferrer');
+            });
+        }
     });
 }
 

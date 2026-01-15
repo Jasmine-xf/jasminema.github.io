@@ -146,12 +146,21 @@
 
 /* 画廊增强效果 */
 .gallery-item img {
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.gallery-item img:hover {
+    opacity: 0.9;
 }
 
 /* Design Decisions 图片无动画 */
 .section-content-left .gallery-item img {
-    transition: none;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
 /* User Reflection 图片宽度限制 */
@@ -160,6 +169,47 @@
     width: 100%;
     height: auto;
     object-fit: contain;
+    cursor: pointer;
+}
+
+/* 内容区域中的图片也支持点击 */
+.section-content-right img,
+.section-content-left img {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.section-content-right img:hover,
+.section-content-left img:hover {
+    opacity: 0.9;
+}
+
+/* 手机端图片适应屏幕并添加点击提示 */
+@media (max-width: 768px) {
+    .gallery-item {
+        margin-bottom: 16px;
+    }
+    
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        max-width: 100%;
+    }
+    
+    .section-content-right img,
+    .section-content-left img,
+    img[style*="max-width"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+    
+    /* 移除放大镜图标 - 所有图片都可以点击，不需要提示 */
 }
 
 

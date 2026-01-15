@@ -84,7 +84,7 @@ class ComponentLoader {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link fw-medium" href="${basePath}index.html" data-page="home">
+                                <a class="nav-link fw-medium" href="${basePath}index.html#projects" data-page="home">
                                     Work
                                     <div class="nav-highlighter"></div>
                                 </a>

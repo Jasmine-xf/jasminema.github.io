@@ -35,25 +35,64 @@ function initNavigation() {
 
 // 平滑滚动功能
 function initSmoothScroll() {
-    // 为所有内部链接添加平滑滚动
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    // 处理所有包含锚点的链接（包括跨页面的）
+    const allLinks = document.querySelectorAll('a[href*="#"]');
     
-    internalLinks.forEach(link => {
+    allLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            const href = this.getAttribute('href');
             
-            if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 80; // 考虑固定导航栏高度
+            // 检查是否是跨页面的锚点链接（如 index.html#projects）
+            if (href.includes('#') && href.includes('.html')) {
+                const [page, anchor] = href.split('#');
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
                 
+                // 如果是当前页面，直接滚动
+                if (page === currentPage || (page === 'index.html' && currentPage === 'index.html')) {
+                    e.preventDefault();
+                    const targetId = '#' + anchor;
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80; // 考虑固定导航栏高度
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // 如果是其他页面，让浏览器正常跳转，然后在目标页面滚动
+                // Bootstrap会自动处理这种情况
+            } 
+            // 处理同页面的锚点链接
+            else if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80; // 考虑固定导航栏高度
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // 页面加载时检查URL中的锚点
+    if (window.location.hash) {
+        setTimeout(() => {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop - 80;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
                 });
             }
-        });
-    });
+        }, 100);
+    }
 }
 
 // 回到顶部功能
