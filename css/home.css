@@ -13,12 +13,36 @@ main {
     justify-content: center;
     padding: 120px 24px 80px;
     overflow: hidden;
+    min-height: 80vh;
+    background-color: #fff;
 }
 
 .hero-content {
     max-width: 800px;
     text-align: center;
     z-index: 2;
+}
+
+/* Decorative background inside hero - uses the doodle image */
+.hero > .gradient-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url("../assets/images/hero-doodles.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.12;
+    filter: saturate(0%) brightness(1.05);
+}
+
+@media (max-width: 768px) {
+    .hero > .gradient-bg {
+        background-size: contain;
+        background-position: top center;
+        opacity: 0.08;
+    }
 }
 
 /* 项目展示区 */
